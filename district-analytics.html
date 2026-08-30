@@ -1,0 +1,2475 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    SKILL VEXA | District Analytics
+</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #172033;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 25px 16px;
+
+    z-index: 100;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        5px 10px 30px;
+
+}
+
+
+.logo-icon {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+.logo h2 {
+
+    font-size: 19px;
+
+}
+
+
+.logo span {
+
+    font-size: 10px;
+
+    color: #9ca3af;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #9ca3af;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+}
+
+
+nav a:hover {
+
+    background: #1f2937;
+
+    color: white;
+
+}
+
+
+nav a.active {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+.sidebar-bottom {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 20px;
+
+    right: 20px;
+
+}
+
+
+.admin-box {
+
+    border-top:
+        1px solid #374151;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.admin-avatar {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #374151;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+}
+
+
+.admin-box strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+
+.admin-box small {
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 25px 35px;
+
+    width: calc(100% - 250px);
+
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.topbar h1 {
+
+    font-size: 27px;
+
+}
+
+
+.topbar p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.profile-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+.profile strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+
+.profile small {
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   DISTRICT SELECT
+===================================================== */
+
+.district-selector {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+}
+
+
+.selector-text h2 {
+
+    font-size: 18px;
+
+}
+
+
+.selector-text p {
+
+    margin-top: 5px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+}
+
+
+#districtSelect {
+
+    min-width: 220px;
+
+    padding: 11px 14px;
+
+    border:
+        1px solid #dbe1ea;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 13px;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+
+#districtSelect:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.summary-card {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    min-width: 0;
+
+}
+
+
+.summary-card span {
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+.summary-card h3 {
+
+    font-size: 25px;
+
+    margin-top: 8px;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.summary-card small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   ANALYTICS GRID
+===================================================== */
+
+.analytics-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.panel {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    min-width: 0;
+
+}
+
+
+.panel-header {
+
+    margin-bottom: 20px;
+
+}
+
+
+.panel-header h3 {
+
+    font-size: 16px;
+
+}
+
+
+.panel-header p {
+
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   SKILL ROW
+===================================================== */
+
+.skill-row {
+
+    margin-bottom: 18px;
+
+}
+
+
+.skill-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.skill-name {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.skill-value {
+
+    font-size: 11px;
+
+    color: #6b7280;
+
+    white-space: nowrap;
+
+}
+
+
+.bar {
+
+    width: 100%;
+
+    height: 9px;
+
+    background: #edf0f5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.bar-fill {
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition:
+        width .5s ease;
+
+}
+
+
+/* =====================================================
+   GAP
+===================================================== */
+
+.gap-row {
+
+    display: grid;
+
+    grid-template-columns:
+        130px 1fr 45px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.gap-name {
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.gap-bar {
+
+    height: 9px;
+
+    background: #edf0f5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.gap-fill {
+
+    height: 100%;
+
+    background: #ef4444;
+
+    border-radius: 20px;
+
+}
+
+
+.gap-value {
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    text-align: right;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   RECOMMENDATION
+===================================================== */
+
+.recommendation {
+
+    margin-top: 20px;
+
+    background: #eff6ff;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+}
+
+
+.recommendation-title {
+
+    color: #1d4ed8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.recommendation p {
+
+    margin-top: 8px;
+
+    color: #374151;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.priority-title {
+
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+.priority-list {
+
+    margin-top: 8px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+}
+
+
+.priority {
+
+    padding: 7px 10px;
+
+    background: #dbeafe;
+
+    color: #1e40af;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   EMPLOYER DISTRICT
+===================================================== */
+
+.employer-district-box {
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-top: 20px;
+
+}
+
+
+.employer-district-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+}
+
+
+.employer-district-item {
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    min-width: 0;
+
+}
+
+
+.employer-district-item strong {
+
+    display: block;
+
+    font-size: 10px;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.employer-district-item b {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 19px;
+
+    color: #2563eb;
+
+}
+
+
+.employer-district-item small {
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+}
+
+
+.employer-district-note {
+
+    margin-top: 13px;
+
+    background: #eff6ff;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    color: #374151;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .analytics-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .employer-district-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        width: 70px;
+
+        padding:
+            20px 10px;
+
+        overflow-y: auto;
+
+    }
+
+
+    .logo {
+
+        justify-content: center;
+
+        padding:
+            5px 0 25px;
+
+    }
+
+
+    .logo div:not(.logo-icon) {
+
+        display: none;
+
+    }
+
+
+    nav a {
+
+        font-size: 0;
+
+        justify-content: center;
+
+        padding:
+            13px 8px;
+
+    }
+
+
+    nav a span {
+
+        font-size: 18px;
+
+    }
+
+
+    .sidebar-bottom {
+
+        left: 10px;
+
+        right: 10px;
+
+    }
+
+
+    .admin-box {
+
+        justify-content: center;
+
+    }
+
+
+    .admin-box > div:not(.admin-avatar) {
+
+        display: none;
+
+    }
+
+
+    .main {
+
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+        padding: 20px;
+
+    }
+
+
+    .topbar {
+
+        gap: 15px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .profile {
+
+        flex-shrink: 0;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main {
+
+        padding: 15px;
+
+    }
+
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 21px;
+
+        line-height: 1.3;
+
+    }
+
+
+    .topbar p {
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .profile {
+
+        display: none;
+
+    }
+
+
+    .district-selector {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+
+        padding: 16px;
+
+    }
+
+
+    .selector-text h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    #districtSelect {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .summary-card {
+
+        padding: 17px;
+
+    }
+
+
+    .summary-card h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .analytics-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .panel {
+
+        padding: 17px;
+
+    }
+
+
+    .gap-row {
+
+        grid-template-columns:
+            85px 1fr 40px;
+
+        gap: 7px;
+
+    }
+
+
+    .gap-name {
+
+        font-size: 10px;
+
+    }
+
+
+    .gap-value {
+
+        font-size: 10px;
+
+    }
+
+
+    .employer-district-box {
+
+        padding: 16px;
+
+    }
+
+
+    .employer-district-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .recommendation {
+
+        padding: 16px;
+
+    }
+
+
+    .recommendation p {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .sidebar {
+
+        width: 58px;
+
+    }
+
+
+    .main {
+
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+
+        padding: 12px;
+
+    }
+
+
+    nav a {
+
+        padding:
+            11px 5px;
+
+    }
+
+
+    nav a span {
+
+        font-size: 16px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 19px;
+
+    }
+
+
+    .panel {
+
+        padding: 14px;
+
+    }
+
+
+    .gap-row {
+
+        grid-template-columns:
+            70px 1fr 35px;
+
+        gap: 5px;
+
+    }
+
+
+    .employer-district-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+
+            <h2>
+                SKILLVEXA
+            </h2>
+
+            <span>
+                Tamilnadu
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+
+        <a href="index.html" onclick="selectMenu(this)">
+
+            <span>🏠</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="industry.html" onclick="selectMenu(this)">
+
+            <span>🏭</span>
+
+            Industry
+
+        </a>
+
+
+        <a href="student-profile.html" onclick="selectMenu(this)">
+
+            <span>👨‍🎓</span>
+
+            Students
+
+        </a>
+
+
+        <a href="skill-gap.html" onclick="selectMenu(this)">
+
+            <span>📊</span>
+
+            Skill Gap
+
+        </a>
+
+
+        <a href="government.html" onclick="selectMenu(this)">
+
+            <span>🏛️</span>
+
+            Government
+
+        </a>
+
+
+        <a href="training-centre.html" onclick="selectMenu(this)">
+
+            <span>🏫</span>
+
+            Training Centres
+
+        </a>
+
+
+        <a href="career-path.html" onclick="selectMenu(this)">
+
+            <span>🎯</span>
+
+            Career Path
+
+        </a>
+
+
+        <a
+            href="district-analytics.html"
+            class="active"
+            onclick="selectMenu(event,this)"
+        >
+
+            <span>📍</span>
+
+            District Analytics
+
+        </a>
+
+
+        <a href="employer.html" onclick="selectMenu(this)">
+
+            <span>💼</span>
+
+            Employer
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Government / District Analytics
+            </h1>
+
+            <p>
+                Analyze industry demand and student skill availability by district
+            </p>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         DISTRICT SELECTOR
+    ================================================= -->
+
+    <section class="district-selector">
+
+        <div class="selector-text">
+
+            <h2>
+                Select District
+            </h2>
+
+            <p>
+                View skill demand and availability for a district
+            </p>
+
+        </div>
+
+
+        <select
+            id="districtSelect"
+            onchange="loadDistrictAnalytics()"
+        >
+
+            <option value="">
+                Loading districts...
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================= -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <span>
+                DISTRICT
+            </span>
+
+            <h3 id="districtName">
+                -
+            </h3>
+
+            <small>
+                Selected district
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                HIGHEST INDUSTRY DEMAND
+            </span>
+
+            <h3 id="highestDemand">
+                -
+            </h3>
+
+            <small id="highestDemandSkill">
+                -
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                LARGEST SKILL GAP
+            </span>
+
+            <h3 id="largestGap">
+                -
+            </h3>
+
+            <small id="largestGapSkill">
+                -
+            </small>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         ANALYTICS
+    ================================================= -->
+
+    <section class="analytics-grid">
+
+
+        <!-- INDUSTRY DEMAND -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Industry Demand
+                </h3>
+
+                <p>
+                    Skills currently required by industries
+                </p>
+
+            </div>
+
+
+            <div id="industryDemand">
+
+                <div class="loading">
+                    Loading...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUDENT AVAILABILITY -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Student Skill Availability
+                </h3>
+
+                <p>
+                    Skills currently available among students
+                </p>
+
+            </div>
+
+
+            <div id="studentAvailability">
+
+                <div class="loading">
+                    Loading...
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         SKILL GAP
+    ================================================= -->
+
+    <section class="panel" style="margin-top:20px;">
+
+
+        <div class="panel-header">
+
+            <h3>
+                Skill Gap Analysis
+            </h3>
+
+            <p>
+                Difference between industry demand and student skill availability
+            </p>
+
+        </div>
+
+
+        <div id="skillGap">
+
+            <div class="loading">
+                Loading...
+            </div>
+
+        </div>
+
+
+        <!-- EMPLOYER FEEDBACK BY DISTRICT -->
+
+        <div class="employer-district-box">
+
+            <div class="panel-header">
+
+                <h3>
+                    Employer Concerns — District Evidence
+                </h3>
+
+                <p>
+                    Candidate weaknesses reported by employers in the selected district
+                </p>
+
+            </div>
+
+
+            <div
+                id="districtEmployerGrid"
+                class="employer-district-grid"
+            >
+
+                <div class="loading">
+                    Loading employer concerns...
+                </div>
+
+            </div>
+
+
+            <div
+                id="districtEmployerNote"
+                class="employer-district-note"
+            >
+                Loading...
+            </div>
+
+        </div>
+
+
+        <!-- GOVERNMENT RECOMMENDATION -->
+
+        <div class="recommendation">
+
+            <div class="recommendation-title">
+
+                🏛️ GOVERNMENT RECOMMENDATION
+
+            </div>
+
+
+            <p id="recommendationText">
+
+                Loading recommendation...
+
+            </p>
+
+
+            <div class="priority-title">
+
+                Priority Skills
+
+            </div>
+
+
+            <div
+                class="priority-list"
+                id="prioritySkills"
+            >
+
+                Loading...
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<script>
+
+
+// =====================================================
+// BACKEND CONFIGURATION
+// =====================================================
+
+const backendUrl =
+    "https://skill-vexa-backend.onrender.com";
+
+
+// =====================================================
+// LOAD DISTRICTS
+// =====================================================
+
+async function loadDistricts() {
+
+    try {
+
+        const response =
+            await fetch(
+                backendUrl +
+                "/api/districts"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        const select =
+            document.getElementById(
+                "districtSelect"
+            );
+
+
+        select.innerHTML = "";
+
+
+        data.districts.forEach(
+            district => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+                option.value =
+                    district;
+
+                option.textContent =
+                    district;
+
+                select.appendChild(
+                    option
+                );
+
+            }
+        );
+
+
+        if (
+            data.districts.length > 0
+        ) {
+
+            select.value =
+                "Chennai";
+
+            if (
+                !data.districts.includes(
+                    "Chennai"
+                )
+            ) {
+
+                select.value =
+                    data.districts[0];
+
+            }
+
+
+            loadDistrictAnalytics();
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "districtSelect"
+        ).innerHTML = `
+            <option>
+                Failed to load districts
+            </option>
+        `;
+
+    }
+
+}
+
+
+// =====================================================
+// LOAD ANALYTICS
+// =====================================================
+
+async function loadDistrictAnalytics() {
+
+    const district =
+        document.getElementById(
+            "districtSelect"
+        ).value;
+
+
+    if (!district) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                backendUrl +
+                "/api/district-analytics?district="
+                +
+                encodeURIComponent(
+                    district
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        displayAnalytics(
+            data.analytics,
+            district
+        );
+
+
+        loadRecommendation(
+            district
+        );
+
+
+        loadDistrictEmployerFeedback(
+            district
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Failed to load district analytics."
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// DISPLAY ANALYTICS
+// =====================================================
+
+function displayAnalytics(
+    analytics,
+    district
+) {
+
+
+    document.getElementById(
+        "districtName"
+    ).textContent =
+        district;
+
+
+    if (
+        analytics.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    // -----------------------------------------------
+    // Highest demand
+    // -----------------------------------------------
+
+    const highestDemand =
+        [...analytics]
+            .sort(
+                (a, b) =>
+                    b.industry_demand
+                    -
+                    a.industry_demand
+            )[0];
+
+
+    document.getElementById(
+        "highestDemand"
+    ).textContent =
+        highestDemand.industry_demand
+        + "%";
+
+
+    document.getElementById(
+        "highestDemandSkill"
+    ).textContent =
+        highestDemand.skill_name;
+
+
+    // -----------------------------------------------
+    // Largest gap
+    // -----------------------------------------------
+
+    const largestGap =
+        [...analytics]
+            .sort(
+                (a, b) =>
+                    b.skill_gap
+                    -
+                    a.skill_gap
+            )[0];
+
+
+    document.getElementById(
+        "largestGap"
+    ).textContent =
+        largestGap.skill_gap
+        + "%";
+
+
+    document.getElementById(
+        "largestGapSkill"
+    ).textContent =
+        largestGap.skill_name;
+
+
+    // -----------------------------------------------
+    // Industry demand
+    // -----------------------------------------------
+
+    const industryContainer =
+        document.getElementById(
+            "industryDemand"
+        );
+
+
+    industryContainer.innerHTML = "";
+
+
+    analytics.forEach(
+        skill => {
+
+            industryContainer.innerHTML += `
+
+                <div class="skill-row">
+
+                    <div class="skill-header">
+
+                        <span class="skill-name">
+
+                            ${escapeHTML(
+                                skill.skill_name
+                            )}
+
+                        </span>
+
+                        <span class="skill-value">
+
+                            ${skill.industry_demand}%
+
+                        </span>
+
+                    </div>
+
+                    <div class="bar">
+
+                        <div
+                            class="bar-fill"
+                            style="
+                                width:
+                                ${skill.industry_demand}%;
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    // -----------------------------------------------
+    // Student availability
+    // -----------------------------------------------
+
+    const studentContainer =
+        document.getElementById(
+            "studentAvailability"
+        );
+
+
+    studentContainer.innerHTML = "";
+
+
+    analytics.forEach(
+        skill => {
+
+            studentContainer.innerHTML += `
+
+                <div class="skill-row">
+
+                    <div class="skill-header">
+
+                        <span class="skill-name">
+
+                            ${escapeHTML(
+                                skill.skill_name
+                            )}
+
+                        </span>
+
+                        <span class="skill-value">
+
+                            ${skill.student_skill_availability}%
+
+                        </span>
+
+                    </div>
+
+                    <div class="bar">
+
+                        <div
+                            class="bar-fill"
+                            style="
+                                width:
+                                ${skill.student_skill_availability}%;
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    // -----------------------------------------------
+    // Skill gap
+    // -----------------------------------------------
+
+    const gapContainer =
+        document.getElementById(
+            "skillGap"
+        );
+
+
+    gapContainer.innerHTML = "";
+
+
+    analytics.forEach(
+        skill => {
+
+            gapContainer.innerHTML += `
+
+                <div class="gap-row">
+
+                    <span class="gap-name">
+
+                        ${escapeHTML(
+                            skill.skill_name
+                        )}
+
+                    </span>
+
+                    <div class="gap-bar">
+
+                        <div
+                            class="gap-fill"
+                            style="
+                                width:
+                                ${skill.skill_gap}%;
+                            "
+                        ></div>
+
+                    </div>
+
+                    <span class="gap-value">
+
+                        ${skill.skill_gap}%
+
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// EMPLOYER FEEDBACK BY DISTRICT
+// =====================================================
+
+async function loadDistrictEmployerFeedback(
+    district
+) {
+
+    const grid =
+        document.getElementById(
+            "districtEmployerGrid"
+        );
+
+
+    const note =
+        document.getElementById(
+            "districtEmployerNote"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                backendUrl +
+                "/api/employer-feedback-district?district="
+                +
+                encodeURIComponent(
+                    district
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success)
+            throw new Error(
+                data.message
+            );
+
+
+        if (!data.total_feedback) {
+
+            grid.innerHTML =
+                '<div class="loading">No employer feedback recorded for this district.</div>';
+
+
+            note.textContent =
+                `No employer feedback is available for ${district} yet.`;
+
+            return;
+
+        }
+
+
+        grid.innerHTML =
+            data.insights
+                .map(
+                    item =>
+                        `<div class="employer-district-item">
+                            <strong>
+                                ${escapeHTML(item.skill)}
+                            </strong>
+
+                            <b>
+                                ${item.percentage}%
+                            </b>
+
+                            <small>
+                                of district feedback
+                            </small>
+                        </div>`
+                )
+                .join(
+                    ''
+                );
+
+
+        const top =
+            data.insights[0];
+
+
+        note.textContent =
+            `Employer evidence for ${district}: ${top.skill} is the leading concern at ${top.percentage}%. This can be considered alongside the district skill gap when deciding training capacity.`;
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+
+        grid.innerHTML =
+            '<div class="loading">Unable to load employer concerns.</div>';
+
+
+        note.textContent =
+            "District employer feedback is currently unavailable.";
+
+    }
+
+}
+
+
+// =====================================================
+// GOVERNMENT RECOMMENDATION
+// =====================================================
+
+async function loadRecommendation(
+    district
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                backendUrl +
+                "/api/district-recommendation?district="
+                +
+                encodeURIComponent(
+                    district
+                )
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        document.getElementById(
+            "recommendationText"
+        ).textContent =
+            data.recommendation;
+
+
+        const container =
+            document.getElementById(
+                "prioritySkills"
+            );
+
+
+        container.innerHTML = "";
+
+
+        if (
+            data.prioritySkills.length === 0
+        ) {
+
+            container.innerHTML =
+                "<span class='priority'>No critical gap</span>";
+
+            return;
+
+        }
+
+
+        data.prioritySkills.forEach(
+            skill => {
+
+                container.innerHTML += `
+
+                    <span class="priority">
+
+                        ${escapeHTML(
+                            skill.skill_name
+                        )}
+
+                        -
+
+                        ${skill.skill_gap}%
+
+                    </span>
+
+                `;
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "recommendationText"
+        ).textContent =
+            "Unable to generate government recommendation.";
+
+    }
+
+}
+
+
+// =====================================================
+// SIDEBAR
+// =====================================================
+
+function selectMenu(
+    element
+) {
+
+
+    const href =
+        element.getAttribute(
+            "href"
+        );
+
+
+    const pageName =
+        element.textContent.trim();
+
+
+    if (
+        !href ||
+        href === "#"
+    ) {
+
+        event.preventDefault();
+
+
+        alert(
+            pageName +
+            " module will be connected next."
+        );
+
+
+        return;
+
+    }
+
+
+    // If a real HTML page exists,
+    // browser automatically moves to it.
+
+}
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHTML(
+    value
+) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+// =====================================================
+// START
+// =====================================================
+
+loadDistricts();
+
+</script>
+
+
+</body>
+
+</html>
+

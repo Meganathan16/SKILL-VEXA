@@ -1,0 +1,3075 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    SKILL VEXA | Government Recommendation
+</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background: #f5f7fb;
+
+        color: #172033;
+
+        overflow-x: hidden;
+
+    }
+
+
+    /* =================================================
+       SIDEBAR
+    ================================================= */
+
+    .sidebar {
+
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        width: 250px;
+
+        height: 100vh;
+
+        background: #111827;
+
+        color: white;
+
+        padding: 25px 16px;
+
+        z-index: 100;
+
+    }
+
+
+    .logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding:
+            5px 10px 30px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 44px;
+        height: 44px;
+
+        border-radius: 11px;
+
+        background: #2563eb;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-weight: bold;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .logo h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 10px;
+
+        color: #9ca3af;
+
+    }
+
+
+    nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+    }
+
+
+    nav a {
+
+        text-decoration: none;
+
+        color: #9ca3af;
+
+        padding: 13px 14px;
+
+        border-radius: 9px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        font-size: 14px;
+
+        transition: .2s;
+
+    }
+
+
+    nav a:hover {
+
+        background: #1f2937;
+
+        color: white;
+
+    }
+
+
+    nav a.active {
+
+        background: #2563eb;
+
+        color: white;
+
+    }
+
+
+    .sidebar-bottom {
+
+        position: absolute;
+
+        bottom: 25px;
+
+        left: 20px;
+
+        right: 20px;
+
+    }
+
+
+    .admin-box {
+
+        border-top:
+            1px solid #374151;
+
+        padding-top: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+    }
+
+
+    .admin-avatar {
+
+        width: 36px;
+        height: 36px;
+
+        border-radius: 50%;
+
+        background: #374151;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 11px;
+
+        font-weight: bold;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .admin-box strong {
+
+        display: block;
+
+        font-size: 13px;
+
+    }
+
+
+    .admin-box small {
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =================================================
+       MAIN
+    ================================================= */
+
+    .main {
+
+        margin-left: 250px;
+
+        min-height: 100vh;
+
+        padding: 25px 35px;
+
+        width: calc(100% - 250px);
+
+    }
+
+
+    /* =================================================
+       TOPBAR
+    ================================================= */
+
+    .topbar {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+
+        margin-bottom: 25px;
+
+        gap: 20px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .topbar p {
+
+        margin-top: 5px;
+
+        color: #6b7280;
+
+        font-size: 13px;
+
+    }
+
+
+    .profile {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .profile-avatar {
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+
+        background: #2563eb;
+
+        color: white;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-weight: bold;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .profile strong {
+
+        display: block;
+
+        font-size: 13px;
+
+    }
+
+
+    .profile small {
+
+        color: #6b7280;
+
+        font-size: 11px;
+
+    }
+
+
+    /* =================================================
+       INTRO
+    ================================================= */
+
+    .intro {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 15px;
+
+        padding: 25px 28px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .tag {
+
+        color: #2563eb;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .intro h2 {
+
+        margin-top: 7px;
+
+        font-size: 22px;
+
+    }
+
+
+    .intro p {
+
+        margin-top: 8px;
+
+        max-width: 850px;
+
+        color: #6b7280;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* =================================================
+       FLOW
+    ================================================= */
+
+    .flow {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .flow-card {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 12px;
+
+        padding: 17px;
+
+        position: relative;
+
+    }
+
+
+    .flow-number {
+
+        width: 30px;
+        height: 30px;
+
+        border-radius: 8px;
+
+        background: #eff6ff;
+
+        color: #2563eb;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-weight: bold;
+
+        font-size: 12px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .flow-card h3 {
+
+        font-size: 13px;
+
+    }
+
+
+    .flow-card p {
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+        margin-top: 4px;
+
+    }
+
+
+    /* =================================================
+       SUMMARY
+    ================================================= */
+
+    .summary {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .summary-card {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 12px;
+
+        padding: 20px;
+
+    }
+
+
+    .summary-card span {
+
+        color: #6b7280;
+
+        font-size: 10px;
+
+    }
+
+
+    .summary-card h3 {
+
+        margin-top: 8px;
+
+        font-size: 25px;
+
+    }
+
+
+    .summary-card small {
+
+        display: block;
+
+        margin-top: 5px;
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+    }
+
+
+    .gap-number {
+
+        color: #dc2626;
+
+    }
+
+
+    .action-number {
+
+        color: #2563eb;
+
+    }
+
+
+    .training-number {
+
+        color: #16a34a;
+
+    }
+
+
+    /* =================================================
+       MAIN GRID
+    ================================================= */
+
+    .content-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1.3fr;
+
+        gap: 20px;
+
+    }
+
+
+    .panel {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 14px;
+
+        padding: 22px;
+
+        min-width: 0;
+
+    }
+
+
+    .panel-header {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .panel-header h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .panel-header p {
+
+        color: #9ca3af;
+
+        font-size: 11px;
+
+        margin-top: 4px;
+
+    }
+
+
+    /* =================================================
+       SKILL GAP
+    ================================================= */
+
+    .gap-box {
+
+        background: #fff7ed;
+
+        border:
+            1px solid #fed7aa;
+
+        border-radius: 12px;
+
+        padding: 18px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .gap-box span {
+
+        color: #c2410c;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+    }
+
+
+    .gap-box h2 {
+
+        margin-top: 7px;
+
+        font-size: 28px;
+
+        color: #dc2626;
+
+    }
+
+
+    .gap-box p {
+
+        margin-top: 5px;
+
+        color: #6b7280;
+
+        font-size: 10px;
+
+    }
+
+
+    .gap-skill {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content:
+            space-between;
+
+        gap: 10px;
+
+        padding: 12px;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 8px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .gap-skill strong {
+
+        font-size: 12px;
+
+    }
+
+
+    .gap-badge {
+
+        background: #fee2e2;
+
+        color: #b91c1c;
+
+        padding: 5px 8px;
+
+        border-radius: 15px;
+
+        font-size: 9px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+    }
+
+
+    /* =====================================================
+       EMPLOYER → GOVERNMENT
+    ===================================================== */
+
+    .employer-action-panel {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .employer-action-summary {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .employer-action-summary > div {
+
+        background: #f8fafc;
+
+        border: 1px solid #e5e7eb;
+
+        border-radius: 10px;
+
+        padding: 15px;
+
+        min-width: 0;
+
+    }
+
+
+    .employer-action-summary span {
+
+        display: block;
+
+        color: #9ca3af;
+
+        font-size: 9px;
+
+        font-weight: bold;
+
+    }
+
+
+    .employer-action-summary strong {
+
+        display: block;
+
+        margin-top: 7px;
+
+        font-size: 18px;
+
+        color: #2563eb;
+
+        overflow-wrap: anywhere;
+
+    }
+
+
+    .government-employer-list {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+
+    }
+
+
+    .government-employer-card {
+
+        background: white;
+
+        border: 1px solid #e5e7eb;
+
+        border-radius: 10px;
+
+        padding: 15px;
+
+        min-width: 0;
+
+    }
+
+
+    .government-employer-card-top {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+
+        gap: 8px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .government-employer-card strong {
+
+        font-size: 12px;
+
+    }
+
+
+    .employer-priority {
+
+        padding: 4px 8px;
+
+        border-radius: 20px;
+
+        font-size: 8px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .priority-high {
+
+        background: #fee2e2;
+
+        color: #b91c1c;
+
+    }
+
+
+    .priority-medium {
+
+        background: #fef3c7;
+
+        color: #92400e;
+
+    }
+
+
+    .priority-low {
+
+        background: #dcfce7;
+
+        color: #166534;
+
+    }
+
+
+    .government-employer-card p {
+
+        color: #6b7280;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+        overflow-wrap: anywhere;
+
+    }
+
+
+    .government-employer-insight {
+
+        margin-top: 18px;
+
+        background: #eff6ff;
+
+        border: 1px solid #dbeafe;
+
+        border-radius: 10px;
+
+        padding: 15px;
+
+        color: #374151;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+    }
+
+
+    @media (max-width: 700px) {
+
+        .employer-action-summary {
+
+            grid-template-columns: 1fr;
+
+        }
+
+
+        .government-employer-list {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+
+    /* =================================================
+       RECOMMENDATIONS
+    ================================================= */
+
+    .recommendation {
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 10px;
+
+        padding: 15px;
+
+        margin-bottom: 10px;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        transition: .2s;
+
+        min-width: 0;
+
+    }
+
+
+    .recommendation:hover {
+
+        border-color: #bfdbfe;
+
+        background: #f8fbff;
+
+    }
+
+
+    .recommendation input {
+
+        width: 17px;
+
+        height: 17px;
+
+        margin-top: 2px;
+
+        cursor: pointer;
+
+        accent-color: #2563eb;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .recommendation-content {
+
+        flex: 1;
+
+        min-width: 0;
+
+    }
+
+
+    .recommendation-title {
+
+        font-size: 12px;
+
+        font-weight: bold;
+
+    }
+
+
+    .recommendation-description {
+
+        margin-top: 4px;
+
+        color: #6b7280;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .priority {
+
+        padding: 4px 7px;
+
+        border-radius: 15px;
+
+        font-size: 8px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .high {
+
+        background: #fee2e2;
+
+        color: #b91c1c;
+
+    }
+
+
+    .medium {
+
+        background: #fef3c7;
+
+        color: #92400e;
+
+    }
+
+
+    .low {
+
+        background: #dcfce7;
+
+        color: #166534;
+
+    }
+
+
+    /* =================================================
+       GOVERNMENT ACTION BOX
+    ================================================= */
+
+    .government-box {
+
+        margin-top: 20px;
+
+        background: #eff6ff;
+
+        border:
+            1px solid #dbeafe;
+
+        border-radius: 12px;
+
+        padding: 18px;
+
+    }
+
+
+    .government-box h3 {
+
+        color: #1d4ed8;
+
+        font-size: 13px;
+
+    }
+
+
+    .government-box p {
+
+        margin-top: 6px;
+
+        color: #4b5563;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* =================================================
+       ACTION BUTTON
+    ================================================= */
+
+    .action-area {
+
+        display: flex;
+
+        justify-content: flex-end;
+
+        gap: 10px;
+
+        margin-top: 18px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .btn {
+
+        padding:
+            10px 16px;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+
+        font-weight: bold;
+
+        font-size: 11px;
+
+    }
+
+
+    .btn-secondary {
+
+        border:
+            1px solid #dbe1ea;
+
+        background: white;
+
+    }
+
+
+    .btn-primary {
+
+        border: none;
+
+        background: #2563eb;
+
+        color: white;
+
+    }
+
+
+    .btn-primary:hover {
+
+        background: #1d4ed8;
+
+    }
+
+
+    /* =================================================
+       SUCCESS MESSAGE
+    ================================================= */
+
+    .success-message {
+
+        display: none;
+
+        margin-top: 15px;
+
+        background: #dcfce7;
+
+        color: #166534;
+
+        border:
+            1px solid #bbf7d0;
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+        font-size: 11px;
+
+    }
+
+
+    .success-message.show {
+
+        display: block;
+
+    }
+
+
+    /* =================================================
+       EMPLOYER FEEDBACK
+    ================================================= */
+
+    .employer-feedback-box {
+
+        background: #f8fafc;
+
+        border: 1px solid #e5e7eb;
+
+        border-radius: 12px;
+
+        padding: 18px;
+
+        margin-bottom: 20px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .feedback-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 10px;
+
+        margin-top: 12px;
+
+    }
+
+
+    .feedback-item {
+
+        background: white;
+
+        border: 1px solid #e5e7eb;
+
+        border-radius: 9px;
+
+        padding: 12px;
+
+        min-width: 0;
+
+    }
+
+
+    .feedback-item strong {
+
+        display: block;
+
+        font-size: 10px;
+
+        overflow-wrap: anywhere;
+
+    }
+
+
+    .feedback-item b {
+
+        display: block;
+
+        margin-top: 6px;
+
+        font-size: 18px;
+
+        color: #2563eb;
+
+    }
+
+
+    .feedback-item small {
+
+        display: block;
+
+        margin-top: 4px;
+
+        color: #9ca3af;
+
+        font-size: 8px;
+
+    }
+
+
+    /* =================================================
+       RESPONSIVE
+    ================================================= */
+
+    @media (max-width: 1100px) {
+
+        .flow {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+        .content-grid {
+
+            grid-template-columns: 1fr;
+
+        }
+
+        .feedback-grid {
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+        }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+        .sidebar {
+
+            width: 70px;
+
+            padding:
+                25px 8px;
+
+        }
+
+        .logo {
+
+            justify-content: center;
+
+            padding:
+                5px 0 30px;
+
+        }
+
+        .logo div:not(.logo-icon) {
+
+            display: none;
+
+        }
+
+        nav a {
+
+            font-size: 0;
+
+            justify-content:
+                center;
+
+            padding:
+                13px 8px;
+
+        }
+
+        nav a span {
+
+            font-size: 18px;
+
+        }
+
+        .sidebar-bottom {
+
+            left: 8px;
+
+            right: 8px;
+
+        }
+
+        .admin-box {
+
+            justify-content: center;
+
+            border-top:
+                1px solid #374151;
+
+        }
+
+        .admin-box > div:last-child {
+
+            display: none;
+
+        }
+
+        .main {
+
+            margin-left: 70px;
+
+            width: calc(100% - 70px);
+
+            padding: 20px;
+
+        }
+
+        .summary {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .main {
+
+            padding:
+                15px 12px;
+
+        }
+
+        .topbar {
+
+            align-items: flex-start;
+
+            margin-bottom: 18px;
+
+        }
+
+        .topbar h1 {
+
+            font-size: 21px;
+
+            line-height: 1.3;
+
+        }
+
+        .topbar p {
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+        }
+
+        .profile {
+
+            display: none;
+
+        }
+
+        .intro {
+
+            padding:
+                18px;
+
+        }
+
+        .intro h2 {
+
+            font-size: 19px;
+
+            line-height: 1.3;
+
+        }
+
+        .intro p {
+
+            font-size: 11px;
+
+        }
+
+        .flow {
+
+            grid-template-columns: 1fr;
+
+        }
+
+        .summary-card {
+
+            padding: 17px;
+
+        }
+
+        .content-grid {
+
+            gap: 15px;
+
+        }
+
+        .panel {
+
+            padding: 16px;
+
+            border-radius: 12px;
+
+        }
+
+        .panel-header h3 {
+
+            font-size: 14px;
+
+        }
+
+        .panel-header p {
+
+            font-size: 10px;
+
+        }
+
+        .government-employer-card-top {
+
+            align-items: flex-start;
+
+        }
+
+        .recommendation {
+
+            gap: 9px;
+
+            padding: 12px;
+
+        }
+
+        .recommendation-title {
+
+            font-size: 11px;
+
+        }
+
+        .recommendation-description {
+
+            font-size: 9px;
+
+        }
+
+        .action-area {
+
+            justify-content: stretch;
+
+        }
+
+        .action-area .btn {
+
+            flex: 1;
+
+        }
+
+        .feedback-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+        .employer-feedback-box {
+
+            padding: 15px;
+
+        }
+
+    }
+
+
+    @media (max-width: 380px) {
+
+        .sidebar {
+
+            width: 58px;
+
+        }
+
+        .main {
+
+            margin-left: 58px;
+
+            width: calc(100% - 58px);
+
+            padding:
+                12px 8px;
+
+        }
+
+        nav a {
+
+            padding:
+                11px 4px;
+
+        }
+
+        nav a span {
+
+            font-size: 16px;
+
+        }
+
+        .logo-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+        }
+
+        .feedback-grid {
+
+            grid-template-columns: 1fr;
+
+        }
+
+        .recommendation {
+
+            align-items: flex-start;
+
+        }
+
+        .priority {
+
+            font-size: 7px;
+
+            padding:
+                4px 5px;
+
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<!-- =================================================
+     SIDEBAR
+================================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+
+            <h2>
+                SKILLVEXA
+            </h2>
+
+            <span>
+                Tamilnadu
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+
+        <a href="index.html" onclick="selectMenu(this)">
+
+            <span>🏠</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="industry.html" onclick="selectMenu(this)">
+
+            <span>🏭</span>
+
+            Industry
+
+        </a>
+
+
+        <a href="student-profile.html" onclick="selectMenu(this)">
+
+            <span>👨‍🎓</span>
+
+            Students
+
+        </a>
+
+
+        <a href="skill-gap.html" onclick="selectMenu(this)">
+
+            <span>📊</span>
+
+            Skill Gap
+
+        </a>
+
+
+        <a
+            href="government.html"
+            class="active"
+            onclick="selectMenu(event,this)"
+        >
+
+            <span>🏛️</span>
+
+            Government
+
+        </a>
+
+
+        <a href="training-centres.html" onclick="selectMenu(this)">
+
+            <span>🏫</span>
+
+            Training Centres
+
+        </a>
+
+
+        <a href="career-path.html" onclick="selectMenu(this)">
+
+            <span>🎯</span>
+
+            Career Path
+
+        </a>
+
+
+        <a href="district-analytics.html" onclick="selectMenu(this)">
+
+            <span>📍</span>
+
+            District Analytics
+
+        </a>
+
+
+        <a href="employer.html" onclick="selectMenu(this)">
+
+            <span>💼</span>
+
+            Employer
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</aside>
+
+
+<!-- =================================================
+     MAIN
+================================================= -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Government Recommendation
+            </h1>
+
+            <p>
+                Convert identified skill gaps into government training actions
+            </p>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section class="intro">
+
+        <span class="tag">
+            GOVERNMENT SKILL PLANNING
+        </span>
+
+
+        <h2>
+            From Skill Gap to Government Action
+        </h2>
+
+
+        <p>
+
+            SKILLVEXA analyzes industry requirements and
+            student skill gaps to recommend the training,
+            curriculum and industry partnerships that
+            government and training centres should provide.
+
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         CORE FLOW
+    ================================================= -->
+
+    <section class="flow">
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                01
+            </div>
+
+            <h3>
+                Industry Needs
+            </h3>
+
+            <p>
+                Identify skills demanded by industries.
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                02
+            </div>
+
+            <h3>
+                Student Skills
+            </h3>
+
+            <p>
+                Analyze current student capabilities.
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                03
+            </div>
+
+            <h3>
+                Skill Gap
+            </h3>
+
+            <p>
+                Find missing and weak skills.
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                04
+            </div>
+
+            <h3>
+                Government Action
+            </h3>
+
+            <p>
+                Recommend targeted training programs.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================= -->
+
+    <section class="summary">
+
+
+        <div class="summary-card">
+
+            <span>
+                SKILL GAP DETECTED
+            </span>
+
+            <h3
+                class="gap-number"
+                id="gapPercentage"
+            >
+                60%
+            </h3>
+
+            <small>
+                Current student's identified gap
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                RECOMMENDED ACTIONS
+            </span>
+
+            <h3
+                class="action-number"
+                id="actionCount"
+            >
+                5
+            </h3>
+
+            <small>
+                Government interventions
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                TRAINING PRIORITY
+            </span>
+
+            <h3
+                class="training-number"
+            >
+                HIGH
+            </h3>
+
+            <small>
+                Immediate intervention required
+            </small>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================= -->
+
+    <section class="content-grid">
+
+
+        <!-- =============================================
+             SKILL GAP
+        ============================================== -->
+
+        <div class="panel">
+
+
+            <div class="panel-header">
+
+                <h3>
+                    Skills Requiring Intervention
+                </h3>
+
+                <p>
+                    Skills identified from the skill gap analysis
+                </p>
+
+            </div>
+
+
+            <div class="gap-box">
+
+                <span>
+                    TOTAL SKILL GAP
+                </span>
+
+                <h2>
+                    60%
+                </h2>
+
+                <p>
+                    3 major skills require immediate training support.
+                </p>
+
+            </div>
+
+
+            <div class="gap-skill">
+
+                <strong>
+                    Machine Learning
+                </strong>
+
+                <span class="gap-badge">
+                    HIGH GAP
+                </span>
+
+            </div>
+
+
+            <div class="gap-skill">
+
+                <strong>
+                    Cloud Computing
+                </strong>
+
+                <span class="gap-badge">
+                    HIGH GAP
+                </span>
+
+            </div>
+
+
+            <div class="gap-skill">
+
+                <strong>
+                    Power BI
+                </strong>
+
+                <span class="gap-badge">
+                    MEDIUM GAP
+                </span>
+
+            </div>
+
+
+            <div class="government-box">
+
+                <h3>
+                    💡 Why Government Intervention?
+                </h3>
+
+                <p>
+
+                    These skills are demanded by industries
+                    but are currently missing among students.
+                    Government-supported training centres can
+                    reduce this gap by introducing targeted
+                    courses and increasing training capacity.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================================
+             EMPLOYER FEEDBACK → GOVERNMENT ACTION
+        ===================================================== -->
+
+        <div class="panel employer-action-panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    💼 Employer Feedback → Government Action
+                </h3>
+
+                <p>
+                    Training priorities identified from employer
+                    candidate feedback
+                </p>
+
+            </div>
+
+
+            <div class="employer-action-summary">
+
+                <div>
+
+                    <span>
+                        EMPLOYER FEEDBACK
+                    </span>
+
+                    <strong id="governmentFeedbackTotal">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TOP TRAINING PRIORITY
+                    </span>
+
+                    <strong id="governmentTopPriority">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="governmentEmployerRecommendations"
+                class="government-employer-list"
+            >
+
+                <div class="loading">
+                    Loading employer-based recommendations...
+                </div>
+
+            </div>
+
+
+            <div
+                id="governmentEmployerInsight"
+                class="government-employer-insight"
+            >
+
+                Loading...
+
+            </div>
+
+        </div>
+
+
+        <!-- =============================================
+             RECOMMENDATIONS
+        ============================================== -->
+
+        <div class="panel">
+
+
+            <div class="panel-header">
+
+                <h3>
+                    Recommended Government Actions
+                </h3>
+
+                <p>
+                    Select the actions that should be implemented
+                </p>
+
+            </div>
+
+
+            <!-- ACTION 1 -->
+
+            <label class="recommendation">
+
+                <input
+                    type="checkbox"
+                    class="action-checkbox"
+                    checked
+                >
+
+                <div class="recommendation-content">
+
+                    <div class="recommendation-title">
+
+                        Start AI/ML Training
+
+                    </div>
+
+                    <div class="recommendation-description">
+
+                        Introduce Machine Learning and AI
+                        training programs at government
+                        training centres.
+
+                    </div>
+
+                </div>
+
+                <span class="priority high">
+                    HIGH
+                </span>
+
+            </label>
+
+
+            <!-- ACTION 2 -->
+
+            <label class="recommendation">
+
+                <input
+                    type="checkbox"
+                    class="action-checkbox"
+                    checked
+                >
+
+                <div class="recommendation-content">
+
+                    <div class="recommendation-title">
+
+                        Increase Cloud Computing Seats
+
+                    </div>
+
+                    <div class="recommendation-description">
+
+                        Increase the number of students
+                        accepted into Cloud Computing
+                        training programs.
+
+                    </div>
+
+                </div>
+
+                <span class="priority high">
+                    HIGH
+                </span>
+
+            </label>
+
+
+            <!-- ACTION 3 -->
+
+            <label class="recommendation">
+
+                <input
+                    type="checkbox"
+                    class="action-checkbox"
+                    checked
+                >
+
+                <div class="recommendation-content">
+
+                    <div class="recommendation-title">
+
+                        Add Power BI Curriculum
+
+                    </div>
+
+                    <div class="recommendation-description">
+
+                        Include Power BI and data visualization
+                        modules in relevant government courses.
+
+                    </div>
+
+                </div>
+
+                <span class="priority medium">
+                    MEDIUM
+                </span>
+
+            </label>
+
+
+            <!-- ACTION 4 -->
+
+            <label class="recommendation">
+
+                <input
+                    type="checkbox"
+                    class="action-checkbox"
+                    checked
+                >
+
+                <div class="recommendation-content">
+
+                    <div class="recommendation-title">
+
+                        Partner With IT Companies
+
+                    </div>
+
+                    <div class="recommendation-description">
+
+                        Build partnerships with industries
+                        for practical training, internships
+                        and placement opportunities.
+
+                    </div>
+
+                </div>
+
+                <span class="priority medium">
+                    MEDIUM
+                </span>
+
+            </label>
+
+
+            <!-- ACTION 5 -->
+
+            <label class="recommendation">
+
+                <input
+                    type="checkbox"
+                    class="action-checkbox"
+                    checked
+                >
+
+                <div class="recommendation-content">
+
+                    <div class="recommendation-title">
+
+                        Provide Industry-Certified Courses
+
+                    </div>
+
+                    <div class="recommendation-description">
+
+                        Provide recognized certification programs
+                        aligned with current industry requirements.
+
+                    </div>
+
+                </div>
+
+                <span class="priority low">
+                    LONG TERM
+                </span>
+
+            </label>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="action-area">
+
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="resetActions()"
+                >
+
+                    Reset
+
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    onclick="saveRecommendations()"
+                >
+
+                    Save Recommendations
+
+                </button>
+
+
+            </div>
+
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+
+                ✓ Government recommendations saved successfully.
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <section class="employer-feedback-box">
+
+        <div class="panel-header">
+
+            <h3>
+                Employer Feedback Evidence
+            </h3>
+
+            <p>
+                Government actions are strengthened by actual employer-reported candidate weaknesses
+            </p>
+
+        </div>
+
+        <div
+            id="governmentFeedbackGrid"
+            class="feedback-grid"
+        >
+
+            <div class="loading">
+                Loading employer feedback...
+            </div>
+
+        </div>
+
+        <p
+            id="governmentFeedbackNote"
+            style="margin-top:12px;color:#4b5563;font-size:10px;line-height:1.5;"
+        >
+            Loading...
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================= -->
+
+<script>
+
+    /* =================================================
+       BACKEND URL
+       GitHub Pages → Render Backend
+    ================================================= */
+
+    const BACKEND_URL =
+        "https://skill-vexa-backend.onrender.com";
+
+
+    // =================================================
+    // EMPLOYER FEEDBACK EVIDENCE
+    // =================================================
+
+    async function loadEmployerFeedbackEvidence() {
+
+        const grid =
+            document.getElementById(
+                "governmentFeedbackGrid"
+            );
+
+        const note =
+            document.getElementById(
+                "governmentFeedbackNote"
+            );
+
+        try {
+
+            const response =
+                await fetch(
+                    `${BACKEND_URL}/api/employer-feedback-insights`
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!data.success)
+                throw new Error(data.message);
+
+
+            if (!data.total_feedback) {
+
+                grid.innerHTML =
+                    '<div class="loading">No employer feedback available yet.</div>';
+
+                note.textContent =
+                    "Employer feedback will appear here after companies submit candidate rejection reasons.";
+
+                return;
+
+            }
+
+
+            grid.innerHTML =
+                data.insights
+                    .map(
+                        item =>
+                            `<div class="feedback-item">
+                                <strong>${escapeHTML(item.skill)}</strong>
+                                <b>${item.percentage}%</b>
+                                <small>of employer feedback</small>
+                            </div>`
+                    )
+                    .join('');
+
+
+            const top =
+                data.insights[0];
+
+
+            note.textContent =
+                `Priority evidence: ${top.skill} is reported most often (${top.percentage}%). Consider prioritising this area in government training and industry partnerships.`;
+
+        }
+
+        catch(error) {
+
+            console.error(error);
+
+            grid.innerHTML =
+                '<div class="loading">Unable to load employer feedback.</div>';
+
+            note.textContent =
+                "Employer feedback is currently unavailable.";
+
+        }
+
+    }
+
+
+    // =================================================
+    // UPDATE ACTION COUNT
+    // =================================================
+
+    function updateActionCount() {
+
+        const checkboxes =
+            document.querySelectorAll(
+                ".action-checkbox"
+            );
+
+
+        let count = 0;
+
+
+        checkboxes.forEach(
+            function(checkbox) {
+
+                if (checkbox.checked) {
+
+                    count++;
+
+                }
+
+            }
+        );
+
+
+        document.getElementById(
+            "actionCount"
+        ).textContent = count;
+
+    }
+
+
+    // =================================================
+    // CHECKBOX EVENTS
+    // =================================================
+
+    document
+        .querySelectorAll(
+            ".action-checkbox"
+        )
+        .forEach(
+            function(checkbox) {
+
+                checkbox.addEventListener(
+                    "change",
+                    updateActionCount
+                );
+
+            }
+        );
+
+
+    // =================================================
+    // SAVE RECOMMENDATIONS
+    // =================================================
+
+    function saveRecommendations() {
+
+        const checkboxes =
+            document.querySelectorAll(
+                ".action-checkbox"
+            );
+
+
+        const selectedActions = [];
+
+
+        checkboxes.forEach(
+            function(checkbox) {
+
+                if (
+                    checkbox.checked
+                ) {
+
+                    const title =
+                        checkbox
+                            .parentElement
+                            .querySelector(
+                                ".recommendation-title"
+                            )
+                            .textContent
+                            .trim();
+
+
+                    selectedActions.push(
+                        title
+                    );
+
+                }
+
+            }
+        );
+
+
+        console.log(
+            "Selected government actions:",
+            selectedActions
+        );
+
+
+        document
+            .getElementById(
+                "successMessage"
+            )
+            .classList.add("show");
+
+
+        setTimeout(
+            function() {
+
+                document
+                    .getElementById(
+                        "successMessage"
+                    )
+                    .classList.remove("show");
+
+            },
+            3000
+        );
+
+    }
+
+
+    // =====================================================
+    // LOAD EMPLOYER FEEDBACK → GOVERNMENT RECOMMENDATIONS
+    // =====================================================
+
+    async function loadEmployerFeedbackRecommendations() {
+
+        try {
+
+            const response =
+                await fetch(
+                    `${BACKEND_URL}/api/employer-feedback-insights`
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!data.success) {
+
+                throw new Error(
+                    data.message ||
+                    "Failed to load employer feedback."
+                );
+
+            }
+
+
+            // ---------------------------------------------
+            // Total feedback
+            // ---------------------------------------------
+
+            document.getElementById(
+                "governmentFeedbackTotal"
+            ).textContent =
+                data.total_feedback;
+
+
+            const container =
+                document.getElementById(
+                    "governmentEmployerRecommendations"
+                );
+
+
+            container.innerHTML = "";
+
+
+            if (
+                !data.insights ||
+                data.insights.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="loading">
+
+                        No employer feedback available yet.
+
+                    </div>
+
+                `;
+
+                document.getElementById(
+                    "governmentTopPriority"
+                ).textContent = "-";
+
+                return;
+
+            }
+
+
+            // ---------------------------------------------
+            // Top priority
+            // ---------------------------------------------
+
+            const top =
+                data.insights[0];
+
+
+            document.getElementById(
+                "governmentTopPriority"
+            ).textContent =
+                top.skill;
+
+
+            // ---------------------------------------------
+            // Display recommendations
+            // ---------------------------------------------
+
+            data.insights.forEach(
+                function(item) {
+
+                    let priority =
+                        "LOW";
+
+                    let priorityClass =
+                        "priority-low";
+
+
+                    if (
+                        item.percentage >= 50
+                    ) {
+
+                        priority =
+                            "HIGH";
+
+                        priorityClass =
+                            "priority-high";
+
+                    }
+
+                    else if (
+                        item.percentage >= 25
+                    ) {
+
+                        priority =
+                            "MEDIUM";
+
+                        priorityClass =
+                            "priority-medium";
+
+                    }
+
+
+                    let action =
+                        "";
+
+
+                    switch (
+                        item.skill
+                    ) {
+
+                        case "Practical Skills":
+
+                            action =
+                                "Increase hands-on practical training and industry projects.";
+
+                            break;
+
+
+                        case "Python":
+
+                            action =
+                                "Strengthen Python programming and project-based training.";
+
+                            break;
+
+
+                        case "Communication":
+
+                            action =
+                                "Introduce communication, presentation and interview training.";
+
+                            break;
+
+
+                        case "Project Experience":
+
+                            action =
+                                "Increase industry projects, internships and real-world assignments.";
+
+                            break;
+
+
+                        case "Problem Solving":
+
+                            action =
+                                "Add problem-solving exercises, coding challenges and assessments.";
+
+                            break;
+
+
+                        default:
+
+                            action =
+                                "Introduce targeted training based on employer feedback.";
+
+                    }
+
+
+                    container.innerHTML += `
+
+                        <div
+                            class="government-employer-card"
+                        >
+
+                            <div
+                                class="government-employer-card-top"
+                            >
+
+                                <strong>
+
+                                    ${escapeHTML(
+                                        item.skill
+                                    )}
+
+                                </strong>
+
+
+                                <span
+                                    class="
+                                        employer-priority
+                                        ${priorityClass}
+                                    "
+                                >
+
+                                    ${priority}
+
+                                </span>
+
+                            </div>
+
+
+                            <p>
+
+                                ${item.percentage}%
+                                of employer feedback
+                                identified this weakness.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>
+                                    Government Action:
+                                </strong>
+
+                                ${escapeHTML(
+                                    action
+                                )}
+
+                            </p>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            // ---------------------------------------------
+            // Insight
+            // ---------------------------------------------
+
+            document.getElementById(
+                "governmentEmployerInsight"
+            ).innerHTML = `
+
+                <strong>
+                    💡 GOVERNMENT TRAINING INSIGHT
+                </strong>
+
+                <br><br>
+
+                Employers are reporting
+                <strong>
+                    ${escapeHTML(top.skill)}
+                </strong>
+                as the most frequent candidate weakness.
+
+                Government training centres should
+                prioritise this area and increase
+                practical, industry-oriented training.
+
+            `;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Government employer feedback error:",
+                error
+            );
+
+
+            document.getElementById(
+                "governmentEmployerRecommendations"
+            ).innerHTML = `
+
+                <div class="loading">
+
+                    Unable to load employer feedback.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    // =================================================
+    // RESET
+    // =================================================
+
+    function resetActions() {
+
+        document
+            .querySelectorAll(
+                ".action-checkbox"
+            )
+            .forEach(
+                function(checkbox) {
+
+                    checkbox.checked = false;
+
+                }
+            );
+
+
+        updateActionCount();
+
+    }
+
+
+    // =================================================
+    // SIDEBAR
+    // =================================================
+
+    function selectMenu(element) {
+
+        const href =
+            element.getAttribute(
+                "href"
+            );
+
+
+        const pageName =
+            element.textContent.trim();
+
+
+        if (
+            !href ||
+            href === "#"
+        ) {
+
+            event.preventDefault();
+
+
+            alert(
+                pageName +
+                " module will be connected next."
+            );
+
+
+            return;
+
+        }
+
+
+        // If a real HTML page exists,
+        // browser automatically moves to it.
+
+    }
+
+
+    // =================================================
+    // START
+    // =================================================
+
+    updateActionCount();
+
+    loadEmployerFeedbackEvidence();
+
+    loadEmployerFeedbackRecommendations();
+
+
+    // =================================================
+    // ESCAPE HTML
+    // =================================================
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

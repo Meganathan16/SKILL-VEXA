@@ -1,0 +1,2929 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SKILL VEXA | Employer Dashboard</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #172033;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: #111827;
+
+    color: white;
+
+    padding: 25px 16px;
+
+    z-index: 100;
+
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px 10px 30px;
+
+}
+
+.logo-icon {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+.logo h2 {
+
+    font-size: 19px;
+
+}
+
+.logo span {
+
+    font-size: 10px;
+
+    color: #9ca3af;
+
+}
+
+nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+nav a {
+
+    text-decoration: none;
+
+    color: #9ca3af;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+}
+
+nav a:hover {
+
+    background: #1f2937;
+
+    color: white;
+
+}
+
+nav a.active {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+.sidebar-bottom {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 20px;
+
+    right: 20px;
+
+}
+
+.admin-box {
+
+    border-top: 1px solid #374151;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.admin-avatar {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #374151;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+}
+
+.admin-box strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+.admin-box small {
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 25px 35px;
+
+    width: calc(100% - 250px);
+
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+.topbar h1 {
+
+    font-size: 27px;
+
+}
+
+.topbar p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.profile-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+.profile strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+.profile small {
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+}
+
+.tag {
+
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+.intro h2 {
+
+    margin-top: 7px;
+
+    font-size: 22px;
+
+}
+
+.intro p {
+
+    margin-top: 7px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    max-width: 750px;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.summary-card {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+}
+
+.summary-card span {
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+.summary-card h3 {
+
+    margin-top: 8px;
+
+    font-size: 24px;
+
+}
+
+.summary-card small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   TWO COLUMN
+===================================================== */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+}
+
+.panel-header {
+
+    margin-bottom: 20px;
+
+}
+
+.panel-header h3 {
+
+    font-size: 16px;
+
+}
+
+.panel-header p {
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group {
+
+    margin-bottom: 15px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+
+}
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #dbe1ea;
+
+    border-radius: 8px;
+
+    outline: none;
+
+}
+
+.form-group input:focus {
+
+    border-color: #2563eb;
+
+}
+
+.skills-input {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.skills-input input {
+
+    flex: 1;
+
+}
+
+.add-skill {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 0 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.add-skill:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skill-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+
+}
+
+.skill-tag {
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+.skill-tag button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #1d4ed8;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.submit-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback-list {
+
+    display: grid;
+
+    gap: 10px;
+
+}
+
+.feedback-item {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.feedback-item input {
+
+    accent-color: #2563eb;
+
+}
+
+.feedback-item label {
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   JOB REQUIREMENTS
+===================================================== */
+
+.job-card {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 11px;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+}
+
+.job-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+}
+
+.job-top h4 {
+
+    font-size: 13px;
+
+}
+
+.company {
+
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+}
+
+.job-status {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    padding: 5px 8px;
+
+    border-radius: 15px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+.requirement-skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+}
+
+.requirement {
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    padding: 6px 8px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   INSIGHTS
+===================================================== */
+
+.insights-panel {
+
+    margin-top: 20px;
+
+}
+
+.feedback-bar {
+
+    margin-bottom: 15px;
+
+}
+
+.feedback-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+}
+
+.feedback-header span {
+
+    font-size: 11px;
+
+}
+
+.feedback-header strong {
+
+    font-size: 11px;
+
+}
+
+.progress {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #edf0f5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+.progress div {
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+}
+
+
+/* =====================================================
+   ALERT
+===================================================== */
+
+.core-insight {
+
+    margin-top: 18px;
+
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+}
+
+.core-insight strong {
+
+    color: #1d4ed8;
+
+    font-size: 11px;
+
+}
+
+.core-insight p {
+
+    color: #4b5563;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    margin-top: 5px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .summary-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .content-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        width: 70px;
+
+        padding: 20px 8px;
+
+    }
+
+    .logo {
+
+        justify-content: center;
+
+        padding: 5px 0 30px;
+
+    }
+
+    .logo div:not(.logo-icon) {
+
+        display: none;
+
+    }
+
+    nav {
+
+        gap: 5px;
+
+    }
+
+    nav a {
+
+        font-size: 0;
+
+        justify-content: center;
+
+        padding: 13px 8px;
+
+        gap: 0;
+
+    }
+
+    nav a span {
+
+        font-size: 18px;
+
+    }
+
+    .sidebar-bottom {
+
+        left: 8px;
+
+        right: 8px;
+
+        bottom: 15px;
+
+    }
+
+    .admin-box {
+
+        justify-content: center;
+
+        border-top: 1px solid #374151;
+
+        padding-top: 12px;
+
+    }
+
+    .admin-box > div:not(.admin-avatar) {
+
+        display: none;
+
+    }
+
+    .main {
+
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+        padding: 20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        overflow-x: hidden;
+
+    }
+
+    .sidebar {
+
+        width: 58px;
+
+        padding: 15px 5px;
+
+    }
+
+    .logo {
+
+        padding-bottom: 20px;
+
+    }
+
+    .logo-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 12px;
+
+    }
+
+    nav a {
+
+        padding: 11px 5px;
+
+    }
+
+    nav a span {
+
+        font-size: 16px;
+
+    }
+
+    .main {
+
+        margin-left: 58px;
+
+        width: calc(100% - 58px);
+
+        padding: 15px 10px;
+
+    }
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+    .topbar h1 {
+
+        font-size: 21px;
+
+        line-height: 1.3;
+
+    }
+
+    .topbar p {
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+    }
+
+    .profile {
+
+        width: 100%;
+
+    }
+
+    .profile-avatar {
+
+        width: 36px;
+
+        height: 36px;
+
+        flex-shrink: 0;
+
+    }
+
+    .intro {
+
+        padding: 18px;
+
+    }
+
+    .intro h2 {
+
+        font-size: 18px;
+
+        line-height: 1.4;
+
+    }
+
+    .intro p {
+
+        font-size: 11px;
+
+    }
+
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+    .summary-card {
+
+        padding: 15px;
+
+    }
+
+    .summary-card h3 {
+
+        font-size: 22px;
+
+    }
+
+    .content-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+    .panel {
+
+        padding: 17px;
+
+        border-radius: 12px;
+
+    }
+
+    .panel-header h3 {
+
+        font-size: 15px;
+
+    }
+
+    .panel-header p {
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+    }
+
+    .form-group input {
+
+        font-size: 13px;
+
+        padding: 11px;
+
+    }
+
+    .skills-input {
+
+        gap: 6px;
+
+    }
+
+    .add-skill {
+
+        padding: 0 12px;
+
+        flex-shrink: 0;
+
+    }
+
+    .job-top {
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+    .job-top h4 {
+
+        font-size: 12px;
+
+        line-height: 1.4;
+
+    }
+
+    .company {
+
+        line-height: 1.4;
+
+    }
+
+    .requirement {
+
+        font-size: 8px;
+
+        padding: 6px 7px;
+
+    }
+
+    .feedback-item {
+
+        padding: 11px;
+
+    }
+
+    .feedback-item label {
+
+        font-size: 10px;
+
+    }
+
+    .core-insight {
+
+        padding: 13px;
+
+    }
+
+    .core-insight p {
+
+        font-size: 9px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE DEVICES
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .sidebar {
+
+        width: 52px;
+
+    }
+
+    .main {
+
+        margin-left: 52px;
+
+        width: calc(100% - 52px);
+
+        padding: 12px 8px;
+
+    }
+
+    .logo-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+    }
+
+    nav a {
+
+        padding: 10px 3px;
+
+    }
+
+    nav a span {
+
+        font-size: 15px;
+
+    }
+
+    .panel {
+
+        padding: 14px;
+
+    }
+
+    .skills-input {
+
+        flex-direction: column;
+
+    }
+
+    .add-skill {
+
+        min-height: 38px;
+
+        padding: 8px;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+
+            <h2>SKILLVEXA</h2>
+
+            <span>Tamilnadu</span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html" onclick="selectMenu(this)">
+            <span>🏠</span>
+            Dashboard
+        </a>
+
+        <a href="industry.html" onclick="selectMenu(this)">
+            <span>🏭</span>
+            Industry
+        </a>
+
+        <a href="student-profile.html" onclick="selectMenu(this)">
+            <span>👨‍🎓</span>
+            Students
+        </a>
+
+        <a href="skill-gap.html" onclick="selectMenu(this)">
+            <span>📊</span>
+            Skill Gap
+        </a>
+
+        <a href="government.html" onclick="selectMenu(this)">
+            <span>🏛️</span>
+            Government
+        </a>
+
+        <a href="training-centre.html" onclick="selectMenu(this)">
+            <span>🏫</span>
+            Training Centres
+        </a>
+
+        <a href="career-path.html" onclick="selectMenu(this)">
+            <span>🎯</span>
+            Career Path
+        </a>
+
+        <a href="district-analytics.html" onclick="selectMenu(this)">
+            <span>📍</span>
+            District Analytics
+        </a>
+
+        <a
+            href="employer.html"
+            class="active"
+            onclick="selectMenu(event,this)"
+        >
+            <span>💼</span>
+            Employer
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Employer Dashboard
+            </h1>
+
+            <p>
+                Capture real-world industry requirements and candidate feedback
+            </p>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section class="intro">
+
+        <span class="tag">
+            EMPLOYER INTELLIGENCE
+        </span>
+
+        <h2>
+            Connect industry requirements with student skills
+        </h2>
+
+        <p>
+            Employers can enter the skills required for job roles
+            and provide feedback about why candidates were rejected.
+            SkillVexa uses this information to identify real-world
+            skill gaps and improve training recommendations.
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================= -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <span>
+                COMPANIES
+            </span>
+
+            <h3 id="companyCount">
+                12
+            </h3>
+
+            <small>
+                Registered employers
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                JOB ROLES
+            </span>
+
+            <h3 id="jobCount">
+                28
+            </h3>
+
+            <small>
+                Requirements collected
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                FEEDBACK
+            </span>
+
+            <h3 id="feedbackCount">
+                156
+            </h3>
+
+            <small>
+                Candidate responses
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                TOP GAP
+            </span>
+
+            <h3>
+                Python
+            </h3>
+
+            <small>
+                Most reported skill issue
+            </small>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================= -->
+
+    <section class="content-grid">
+
+
+        <!-- =================================================
+             JOB REQUIREMENT FORM
+        ================================================= -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Add Job Requirement
+                </h3>
+
+                <p>
+                    Enter what your company currently needs
+                </p>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    COMPANY NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="companyName"
+                    placeholder="Example: ABC Technologies"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    JOB ROLE
+                </label>
+
+                <input
+                    type="text"
+                    id="jobRole"
+                    placeholder="Example: Junior Data Analyst"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    DISTRICT
+                </label>
+
+                <input
+                    type="text"
+                    id="jobDistrict"
+                    placeholder="Example: Chennai"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    REQUIRED SKILLS
+                </label>
+
+                <div class="skills-input">
+
+                    <input
+                        type="text"
+                        id="skillInput"
+                        placeholder="Example: SQL"
+                    >
+
+                    <button
+                        class="add-skill"
+                        onclick="addSkill()"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="skill-list"
+                    id="skillList"
+                ></div>
+
+            </div>
+
+
+            <button
+                class="submit-btn"
+                onclick="submitJobRequirement()"
+            >
+                Submit Job Requirement
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CANDIDATE FEEDBACK
+        ================================================= -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    Candidate Feedback
+                </h3>
+
+                <p>
+                    Why was the candidate rejected?
+                </p>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    COMPANY
+                </label>
+
+                <input
+                    type="text"
+                    id="feedbackCompany"
+                    placeholder="Example: ABC Technologies"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    JOB ROLE
+                </label>
+
+                <input
+                    type="text"
+                    id="feedbackRole"
+                    placeholder="Example: Junior Data Analyst"
+                >
+
+            </div>
+
+
+            <div class="feedback-list">
+
+
+                <div class="feedback-item">
+
+                    <input
+                        type="checkbox"
+                        id="practical"
+                        value="Weak practical skills"
+                    >
+
+                    <label for="practical">
+                        Weak practical skills
+                    </label>
+
+                </div>
+
+
+                <div class="feedback-item">
+
+                    <input
+                        type="checkbox"
+                        id="python"
+                        value="Weak Python"
+                    >
+
+                    <label for="python">
+                        Weak Python
+                    </label>
+
+                </div>
+
+
+                <div class="feedback-item">
+
+                    <input
+                        type="checkbox"
+                        id="communication"
+                        value="Weak communication"
+                    >
+
+                    <label for="communication">
+                        Weak communication
+                    </label>
+
+                </div>
+
+
+                <div class="feedback-item">
+
+                    <input
+                        type="checkbox"
+                        id="project"
+                        value="No project experience"
+                    >
+
+                    <label for="project">
+                        No project experience
+                    </label>
+
+                </div>
+
+
+                <div class="feedback-item">
+
+                    <input
+                        type="checkbox"
+                        id="problem"
+                        value="Weak problem solving"
+                    >
+
+                    <label for="problem">
+                        Problem solving
+                    </label>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="submit-btn"
+                onclick="submitFeedback()"
+            >
+                Submit Feedback
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         CURRENT JOB REQUIREMENTS
+    ================================================= -->
+
+    <section class="panel insights-panel">
+
+        <div class="panel-header">
+
+            <h3>
+                Current Employer Requirements
+            </h3>
+
+            <p>
+                Skills currently requested by companies
+            </p>
+
+        </div>
+
+
+        <div id="jobRequirements">
+
+            <div class="job-card">
+
+                <div class="job-top">
+
+                    <div>
+
+                        <h4>
+                            Junior Data Analyst
+                        </h4>
+
+                        <div class="company">
+                            ABC Technologies
+                        </div>
+
+                    </div>
+
+                    <span class="job-status">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+
+                <div class="requirement-skills">
+
+                    <span class="requirement">
+                        SQL
+                    </span>
+
+                    <span class="requirement">
+                        Python
+                    </span>
+
+                    <span class="requirement">
+                        Power BI
+                    </span>
+
+                    <span class="requirement">
+                        Communication
+                    </span>
+
+                    <span class="requirement">
+                        Problem Solving
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         EMPLOYER FEEDBACK INSIGHTS
+    ================================================= -->
+
+    <section class="panel insights-panel">
+
+        <div class="panel-header">
+
+            <h3>
+                Employer Feedback Insights
+            </h3>
+
+            <p>
+                Common reasons candidates are rejected
+            </p>
+
+        </div>
+
+
+        <div class="feedback-bar">
+
+            <div class="feedback-header">
+
+                <span>
+                    Weak practical skills
+                </span>
+
+                <strong>
+                    42%
+                </strong>
+
+            </div>
+
+            <div class="progress">
+
+                <div style="width:42%"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="feedback-bar">
+
+            <div class="feedback-header">
+
+                <span>
+                    Weak Python
+                </span>
+
+                <strong>
+                    28%
+                </strong>
+
+            </div>
+
+            <div class="progress">
+
+                <div style="width:28%"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="feedback-bar">
+
+            <div class="feedback-header">
+
+                <span>
+                    No project experience
+                </span>
+
+                <strong>
+                    25%
+                </strong>
+
+            </div>
+
+            <div class="progress">
+
+                <div style="width:25%"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="feedback-bar">
+
+            <div class="feedback-header">
+
+                <span>
+                    Weak communication
+                </span>
+
+                <strong>
+                    18%
+                </strong>
+
+            </div>
+
+            <div class="progress">
+
+                <div style="width:18%"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="feedback-bar">
+
+            <div class="feedback-header">
+
+                <span>
+                    Problem solving
+                </span>
+
+                <strong>
+                    15%
+                </strong>
+
+            </div>
+
+            <div class="progress">
+
+                <div style="width:15%"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="core-insight">
+
+            <strong>
+                💡 SKILLVEXA INSIGHT
+            </strong>
+
+            <p>
+                Employers are reporting weak practical skills as
+                the most common reason for candidate rejection.
+                This feedback can be used to recommend more
+                project-based and practical training through
+                government training centres.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script>
+
+
+// =====================================================
+// RENDER BACKEND URL
+// =====================================================
+
+const BACKEND_URL =
+    "https://skill-vexa-backend.onrender.com";
+
+
+// =====================================================
+// DATABASE-BACKED EMPLOYER DATA
+// =====================================================
+
+let requiredSkills = [];
+let employerJobRoles = [];
+
+
+// =====================================================
+// ADD SKILL
+// =====================================================
+
+function addSkill() {
+
+    const input = document.getElementById("skillInput");
+    const skill = input.value.trim();
+
+    if (skill === "") {
+        alert("Please enter a skill.");
+        return;
+    }
+
+    const exists = requiredSkills.some(
+        item => item.toLowerCase() === skill.toLowerCase()
+    );
+
+    if (exists) {
+        alert("This skill is already added.");
+        return;
+    }
+
+    requiredSkills.push(skill);
+    input.value = "";
+    displaySkills();
+}
+
+
+// =====================================================
+// DISPLAY SKILLS
+// =====================================================
+
+function displaySkills() {
+
+    const container = document.getElementById("skillList");
+    container.innerHTML = "";
+
+    requiredSkills.forEach((skill, index) => {
+
+        container.innerHTML += `
+            <div class="skill-tag">
+                ✓ ${escapeHTML(skill)}
+                <button type="button" onclick="removeSkill(${index})">×</button>
+            </div>
+        `;
+    });
+}
+
+
+// =====================================================
+// REMOVE SKILL
+// =====================================================
+
+function removeSkill(index) {
+
+    requiredSkills.splice(index, 1);
+
+    displaySkills();
+}
+
+
+// =====================================================
+// LOAD SAVED JOB REQUIREMENTS FROM MYSQL
+// =====================================================
+
+async function loadEmployerJobRoles() {
+
+    try {
+
+        const response = await fetch(
+            BACKEND_URL + "/api/employer-job-roles",
+            {
+                cache: "no-store"
+            }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load employer job roles."
+            );
+
+        }
+
+        employerJobRoles =
+            Array.isArray(data.roles)
+                ? data.roles
+                : [];
+
+        displaySavedJobRoles(
+            employerJobRoles
+        );
+
+        updateEmployerSummary(
+            employerJobRoles
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Load employer job roles error:",
+            error
+        );
+
+        const container =
+            document.getElementById(
+                "jobRequirements"
+            );
+
+        if (container) {
+
+            container.innerHTML = `
+                <div class="loading">
+                    Could not load saved job requirements.<br><br>
+                    Check that the Render backend and MySQL database are running.
+                </div>
+            `;
+
+        }
+
+    }
+
+}
+
+
+// =====================================================
+// DISPLAY SAVED JOB REQUIREMENTS
+// =====================================================
+
+function displaySavedJobRoles(roles) {
+
+    const container =
+        document.getElementById(
+            "jobRequirements"
+        );
+
+    if (!container) return;
+
+    if (roles.length === 0) {
+
+        container.innerHTML = `
+            <div class="loading">
+                No employer job requirements have been submitted yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+    container.innerHTML = "";
+
+    roles.forEach(role => {
+
+        const skills =
+            Array.isArray(role.skills)
+                ? role.skills
+                : [];
+
+        const skillHTML =
+            skills.map(skill => `
+                <span class="requirement">
+                    ${escapeHTML(
+                        skill.skill_name
+                    )}
+                </span>
+            `).join("");
+
+        container.innerHTML += `
+            <div class="job-card">
+
+                <div class="job-top">
+
+                    <div>
+
+                        <h4>
+                            ${escapeHTML(
+                                role.job_role
+                            )}
+                        </h4>
+
+                        <div class="company">
+
+                            ${escapeHTML(
+                                role.company_name
+                            )}
+
+                            ${
+                                role.district
+                                    ? " • " +
+                                      escapeHTML(
+                                          role.district
+                                      )
+                                    : ""
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <span class="job-status">
+                        ACTIVE
+                    </span>
+
+                </div>
+
+                <div class="requirement-skills">
+
+                    ${skillHTML}
+
+                </div>
+
+            </div>
+        `;
+
+    });
+
+}
+
+
+// =====================================================
+// UPDATE SUMMARY CARDS
+// =====================================================
+
+function updateEmployerSummary(roles) {
+
+    const companies =
+        new Set(
+            roles
+                .map(
+                    role =>
+                        role.company_name
+                )
+                .filter(Boolean)
+        );
+
+    const companyCount =
+        document.getElementById(
+            "companyCount"
+        );
+
+    const jobCount =
+        document.getElementById(
+            "jobCount"
+        );
+
+    if (companyCount) {
+
+        companyCount.textContent =
+            companies.size;
+
+    }
+
+    if (jobCount) {
+
+        jobCount.textContent =
+            roles.length;
+
+    }
+
+}
+
+
+// =====================================================
+// SUBMIT JOB REQUIREMENT TO MYSQL
+// =====================================================
+
+async function submitJobRequirement() {
+
+    const company =
+        document
+            .getElementById("companyName")
+            .value
+            .trim();
+
+    const role =
+        document
+            .getElementById("jobRole")
+            .value
+            .trim();
+
+    const district =
+        document
+            .getElementById("jobDistrict")
+            .value
+            .trim();
+
+    if (
+        company === "" ||
+        role === "" ||
+        district === ""
+    ) {
+
+        alert(
+            "Please enter company name, job role and district."
+        );
+
+        return;
+
+    }
+
+    if (
+        requiredSkills.length === 0
+    ) {
+
+        alert(
+            "Please add at least one required skill."
+        );
+
+        return;
+
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                BACKEND_URL +
+                "/api/employer-job-roles",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify({
+
+                        company_name:
+                            company,
+
+                        job_role:
+                            role,
+
+                        district:
+                            district,
+
+                        skills:
+                            requiredSkills
+
+                    })
+
+                }
+            );
+
+        const data =
+            await response.json();
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Failed to save job requirement."
+            );
+
+        }
+
+        alert(
+            "Job requirement saved successfully to MySQL!"
+        );
+
+        document
+            .getElementById(
+                "companyName"
+            )
+            .value = "";
+
+        document
+            .getElementById(
+                "jobRole"
+            )
+            .value = "";
+
+        document
+            .getElementById(
+                "jobDistrict"
+            )
+            .value = "";
+
+        requiredSkills = [];
+
+        displaySkills();
+
+        await loadEmployerJobRoles();
+
+    } catch (error) {
+
+        console.error(
+            "Submit job requirement error:",
+            error
+        );
+
+        alert(
+            "Job requirement was not saved.\n\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// SUBMIT CANDIDATE FEEDBACK
+// =====================================================
+
+async function submitFeedback() {
+
+    const companyElement =
+        document.getElementById(
+            "feedbackCompany"
+        );
+
+    const roleElement =
+        document.getElementById(
+            "feedbackRole"
+        );
+
+    const company =
+        companyElement
+            ? companyElement.value.trim()
+            : "";
+
+    const role =
+        roleElement
+            ? roleElement.value.trim()
+            : "";
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".feedback-list input[type='checkbox']"
+        );
+
+    const practical =
+        checkboxes[0]
+            ? checkboxes[0].checked
+            : false;
+
+    const python =
+        checkboxes[1]
+            ? checkboxes[1].checked
+            : false;
+
+    const communication =
+        checkboxes[2]
+            ? checkboxes[2].checked
+            : false;
+
+    const project =
+        checkboxes[3]
+            ? checkboxes[3].checked
+            : false;
+
+    const problemSolving =
+        checkboxes[4]
+            ? checkboxes[4].checked
+            : false;
+
+
+    // -------------------------------------------------
+    // Validate company and role
+    // -------------------------------------------------
+
+    if (
+        company === "" ||
+        role === ""
+    ) {
+
+        alert(
+            "Please enter company and job role."
+        );
+
+        return;
+
+    }
+
+
+    // -------------------------------------------------
+    // Validate rejection reason
+    // -------------------------------------------------
+
+    if (
+        !practical &&
+        !python &&
+        !communication &&
+        !project &&
+        !problemSolving
+    ) {
+
+        alert(
+            "Please select at least one rejection reason."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        // =================================================
+        // STEP 1
+        // Get saved employer job requirements
+        // =================================================
+
+        const jobResponse =
+            await fetch(
+                BACKEND_URL +
+                "/api/employer-job-roles"
+            );
+
+        if (!jobResponse.ok) {
+
+            throw new Error(
+                "Unable to connect to employer job API."
+            );
+
+        }
+
+        const jobData =
+            await jobResponse.json();
+
+        console.log(
+            "Employer jobs:",
+            jobData
+        );
+
+        if (
+            !jobData.success
+        ) {
+
+            throw new Error(
+                jobData.message ||
+                "Failed to load employer jobs."
+            );
+
+        }
+
+        const roles =
+            Array.isArray(
+                jobData.roles
+            )
+                ? jobData.roles
+                : [];
+
+
+        // =================================================
+        // STEP 2
+        // Find matching company + job role
+        // =================================================
+
+        const matchingJob =
+            roles.find(
+                function(job) {
+
+                    const databaseCompany =
+                        String(
+                            job.company_name ||
+                            ""
+                        )
+                        .trim()
+                        .toLowerCase();
+
+                    const databaseRole =
+                        String(
+                            job.job_role ||
+                            ""
+                        )
+                        .trim()
+                        .toLowerCase();
+
+                    return (
+                        databaseCompany ===
+                        company.toLowerCase()
+
+                        &&
+
+                        databaseRole ===
+                        role.toLowerCase()
+                    );
+
+                }
+            );
+
+
+        if (!matchingJob) {
+
+            console.log(
+                "Entered company:",
+                company
+            );
+
+            console.log(
+                "Entered role:",
+                role
+            );
+
+            console.log(
+                "Jobs returned by server:",
+                roles
+            );
+
+            alert(
+                "Company and job role were not found.\n\n" +
+                "Please submit the job requirement first."
+            );
+
+            return;
+
+        }
+
+
+        console.log(
+            "Matching job:",
+            matchingJob
+        );
+
+
+        // =================================================
+        // STEP 3
+        // Submit feedback to backend
+        // =================================================
+
+        const feedbackResponse =
+            await fetch(
+                BACKEND_URL +
+                "/api/employer-feedback",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify({
+
+                        job_role_id:
+                            matchingJob.id,
+
+                        weak_practical_skills:
+                            practical,
+
+                        weak_python:
+                            python,
+
+                        weak_communication:
+                            communication,
+
+                        no_project_experience:
+                            project,
+
+                        weak_problem_solving:
+                            problemSolving
+
+                    })
+
+                }
+            );
+
+
+        // =================================================
+        // STEP 4
+        // Read backend response
+        // =================================================
+
+        const feedbackData =
+            await feedbackResponse.json();
+
+        console.log(
+            "Feedback response:",
+            feedbackData
+        );
+
+        if (
+            !feedbackResponse.ok ||
+            !feedbackData.success
+        ) {
+
+            throw new Error(
+                feedbackData.message ||
+                "Failed to save candidate feedback."
+            );
+
+        }
+
+
+        // =================================================
+        // STEP 5
+        // Success
+        // =================================================
+
+        alert(
+            "Candidate feedback submitted successfully!"
+        );
+
+
+        // =================================================
+        // STEP 6
+        // Clear form
+        // =================================================
+
+        if (companyElement) {
+
+            companyElement.value = "";
+
+        }
+
+        if (roleElement) {
+
+            roleElement.value = "";
+
+        }
+
+        checkboxes.forEach(
+            function(checkbox) {
+
+                checkbox.checked =
+                    false;
+
+            }
+        );
+
+        console.log(
+            "Candidate feedback saved successfully."
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Candidate feedback error:",
+            error
+        );
+
+        alert(
+            "Failed to submit candidate feedback.\n\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// START EMPLOYER PAGE
+// =====================================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadEmployerJobRoles();
+
+        displaySkills();
+
+    }
+);
+
+
+// =====================================================
+// SIDEBAR
+// =====================================================
+
+function selectMenu(element) {
+
+    const href =
+        element.getAttribute(
+            "href"
+        );
+
+    const pageName =
+        element.textContent.trim();
+
+    if (
+        !href ||
+        href === "#"
+    ) {
+
+        event.preventDefault();
+
+        alert(
+            pageName +
+            " module will be connected next."
+        );
+
+        return;
+
+    }
+
+}
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,3088 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SKILL VEXA | Skill Gap Analysis
+    </title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f7fb;
+
+            color: #172033;
+
+        }
+
+
+        /* =========================================
+           SIDEBAR
+        ========================================= */
+
+        .sidebar {
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 250px;
+
+            height: 100vh;
+
+            background: #111827;
+
+            color: white;
+
+            padding: 25px 16px;
+
+            z-index: 100;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding:
+                5px 10px 30px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 44px;
+            height: 44px;
+
+            border-radius: 11px;
+
+            background: #2563eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+        }
+
+
+        .logo h2 {
+
+            font-size: 19px;
+
+        }
+
+
+        .logo span {
+
+            font-size: 10px;
+
+            color: #9ca3af;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #9ca3af;
+
+            padding: 13px 14px;
+
+            border-radius: 9px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 14px;
+
+        }
+
+
+        nav a:hover {
+
+            background: #1f2937;
+
+            color: white;
+
+        }
+
+
+        nav a.active {
+
+            background: #2563eb;
+
+            color: white;
+
+        }
+
+
+        .sidebar-bottom {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 20px;
+
+            right: 20px;
+
+        }
+
+
+        .admin-box {
+
+            border-top:
+                1px solid #374151;
+
+            padding-top: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .admin-avatar {
+
+            width: 36px;
+            height: 36px;
+
+            border-radius: 50%;
+
+            background: #374151;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 11px;
+
+        }
+
+
+        .admin-box strong {
+
+            display: block;
+
+            font-size: 13px;
+
+        }
+
+
+        .admin-box small {
+
+            color: #9ca3af;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .main {
+
+            margin-left: 250px;
+
+            min-height: 100vh;
+
+            padding: 25px 35px;
+
+        }
+
+
+        /* =========================================
+           TOPBAR
+        ========================================= */
+
+        .topbar {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .topbar h1 {
+
+            font-size: 27px;
+
+        }
+
+
+        .topbar p {
+
+            margin-top: 5px;
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+        }
+
+
+        .profile {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .profile-avatar {
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+        }
+
+
+        .profile strong {
+
+            display: block;
+
+            font-size: 13px;
+
+        }
+
+
+        .profile small {
+
+            color: #6b7280;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .intro {
+
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 15px;
+
+            padding: 23px 27px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .tag {
+
+            color: #2563eb;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .intro h2 {
+
+            margin: 7px 0;
+
+            font-size: 22px;
+
+        }
+
+
+        .intro p {
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            max-width: 800px;
+
+        }
+
+
+        /* =========================================
+           STUDENT SELECT
+        ========================================= */
+
+        .student-selector {
+
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 16px;
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .student-selector label {
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+        }
+
+
+        .student-selector select {
+
+            padding: 10px 14px;
+
+            border:
+                1px solid #dbe1ea;
+
+            border-radius: 8px;
+
+            min-width: 250px;
+
+            outline: none;
+
+            background: white;
+
+        }
+
+
+        /* =========================================
+           GAP SCORE
+        ========================================= */
+
+        .gap-card {
+
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .gap-info h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .gap-info p {
+
+            color: #6b7280;
+
+            font-size: 12px;
+
+        }
+
+
+        .gap-circle {
+
+            width: 125px;
+            height: 125px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    #ef4444 0deg,
+                    #ef4444 216deg,
+                    #e5e7eb 216deg,
+                    #e5e7eb 360deg
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+        }
+
+
+        .gap-circle::before {
+
+            content: "";
+
+            width: 94px;
+            height: 94px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            position: absolute;
+
+        }
+
+
+        .gap-percentage {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+        }
+
+
+        .gap-percentage strong {
+
+            display: block;
+
+            font-size: 27px;
+
+            color: #ef4444;
+
+        }
+
+
+        .gap-percentage span {
+
+            font-size: 9px;
+
+            color: #9ca3af;
+
+        }
+
+
+        /* =========================================
+           COMPARISON
+        ========================================= */
+
+        .comparison-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .panel {
+
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            padding: 22px;
+
+        }
+
+
+        .panel-header {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .panel-header h3 {
+
+            font-size: 16px;
+
+        }
+
+
+        .panel-header p {
+
+            margin-top: 4px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           SKILL ROW
+        ========================================= */
+
+        .skill-row {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            padding: 13px 10px;
+
+            border-bottom:
+                1px solid #f0f1f4;
+
+        }
+
+
+        .skill-name {
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+        .skill-status {
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: bold;
+
+        }
+
+
+        .have {
+
+            background: #dcfce7;
+
+            color: #15803d;
+
+        }
+
+
+        .missing {
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+        }
+
+
+        .industry {
+
+            background: #dbeafe;
+
+            color: #1d4ed8;
+
+        }
+
+
+        /* =========================================
+           IMPROVE SKILLS
+        ========================================= */
+
+        .improve-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .improve-card {
+
+            border:
+                1px solid #fee2e2;
+
+            background: #fffafa;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+        }
+
+
+        .improve-icon {
+
+            width: 34px;
+            height: 34px;
+
+            border-radius: 8px;
+
+            background: #fee2e2;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .improve-card strong {
+
+            display: block;
+
+            font-size: 12px;
+
+        }
+
+
+        .improve-card small {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: #9ca3af;
+
+            font-size: 9px;
+
+        }
+
+
+        /* =========================================
+           GOVERNMENT RECOMMENDATION
+        ========================================= */
+
+        .recommendation {
+
+            background: #eff6ff;
+
+            border:
+                1px solid #dbeafe;
+
+            border-radius: 14px;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .recommendation-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .recommendation-icon {
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 10px;
+
+            background: #2563eb;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+
+        }
+
+
+        .recommendation-header h3 {
+
+            font-size: 16px;
+
+        }
+
+
+        .recommendation-header p {
+
+            color: #6b7280;
+
+            font-size: 10px;
+
+            margin-top: 3px;
+
+        }
+
+
+        .recommendation-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .recommendation-item {
+
+            background: white;
+
+            border:
+                1px solid #dbeafe;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+        }
+
+
+        .recommendation-item strong {
+
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .recommendation-item span {
+
+            font-size: 10px;
+
+            color: #6b7280;
+
+            line-height: 1.4;
+
+        }
+
+
+        /* =========================================
+           FLOW
+        ========================================= */
+
+        .core-flow {
+
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+        }
+
+
+        .core-flow h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .flow {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+        }
+
+
+        .flow-box {
+
+            padding: 12px 18px;
+
+            background: #f8fafc;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 9px;
+
+            text-align: center;
+
+        }
+
+
+        .flow-box strong {
+
+            display: block;
+
+            font-size: 11px;
+
+        }
+
+
+        .flow-box small {
+
+            color: #9ca3af;
+
+            font-size: 9px;
+
+        }
+
+
+        .arrow {
+
+            font-size: 18px;
+
+            color: #2563eb;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================
+           LOADING
+        ========================================= */
+
+        .loading {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #9ca3af;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:1000px) {
+
+            .comparison-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .improve-list {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+            .recommendation-list {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media(max-width:800px) {
+
+            .sidebar {
+
+                width: 70px;
+
+                padding: 25px 8px;
+
+            }
+
+            .logo {
+
+                justify-content: center;
+
+                padding: 5px 0 30px;
+
+            }
+
+            .logo div:not(.logo-icon) {
+
+                display: none;
+
+            }
+
+            nav a {
+
+                font-size: 0;
+
+                justify-content: center;
+
+                padding: 13px 8px;
+
+            }
+
+            nav a span {
+
+                font-size: 18px;
+
+            }
+
+            .sidebar-bottom {
+
+                left: 8px;
+
+                right: 8px;
+
+            }
+
+            .admin-box {
+
+                justify-content: center;
+
+            }
+
+            .admin-box > div:not(.admin-avatar) {
+
+                display: none;
+
+            }
+
+            .main {
+
+                margin-left: 70px;
+
+                padding: 20px;
+
+                width: calc(100% - 70px);
+
+            }
+
+            .topbar {
+
+                gap: 15px;
+
+            }
+
+            .profile {
+
+                flex-shrink: 0;
+
+            }
+
+        }
+
+
+        @media(max-width:600px) {
+
+            .main {
+
+                margin-left: 0;
+
+                width: 100%;
+
+                padding: 15px;
+
+            }
+
+            .sidebar {
+
+                position: relative;
+
+                width: 100%;
+
+                height: auto;
+
+                min-height: auto;
+
+                padding: 10px;
+
+            }
+
+            .logo {
+
+                display: none;
+
+            }
+
+            nav {
+
+                flex-direction: row;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 5px;
+
+            }
+
+            nav a {
+
+                width: 42px;
+
+                height: 42px;
+
+                padding: 8px;
+
+                border-radius: 8px;
+
+            }
+
+            nav a span {
+
+                font-size: 17px;
+
+            }
+
+            .sidebar-bottom {
+
+                display: none;
+
+            }
+
+            .topbar {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                margin-bottom: 20px;
+
+            }
+
+            .topbar h1 {
+
+                font-size: 22px;
+
+            }
+
+            .topbar p {
+
+                font-size: 12px;
+
+                line-height: 1.4;
+
+            }
+
+            .profile {
+
+                width: 100%;
+
+            }
+
+            .intro {
+
+                padding: 18px;
+
+            }
+
+            .intro h2 {
+
+                font-size: 19px;
+
+                line-height: 1.3;
+
+            }
+
+            .intro p {
+
+                font-size: 12px;
+
+            }
+
+            .student-selector {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 10px;
+
+            }
+
+            .student-selector select {
+
+                width: 100%;
+
+                min-width: 0;
+
+            }
+
+            .gap-card {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                align-items: center;
+
+                text-align: center;
+
+                padding: 20px;
+
+            }
+
+            .gap-circle {
+
+                width: 115px;
+
+                height: 115px;
+
+            }
+
+            .gap-circle::before {
+
+                width: 86px;
+
+                height: 86px;
+
+            }
+
+            .comparison-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .panel {
+
+                padding: 18px;
+
+            }
+
+            .improve-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .recommendation-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .flow {
+
+                flex-direction: column;
+
+                gap: 8px;
+
+            }
+
+            .flow-box {
+
+                width: 100%;
+
+            }
+
+            .arrow {
+
+                transform: rotate(90deg);
+
+            }
+
+            .employer-feedback-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .employer-insight-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media(max-width:400px) {
+
+            .main {
+
+                padding: 10px;
+
+            }
+
+            .topbar h1 {
+
+                font-size: 20px;
+
+            }
+
+            .intro h2 {
+
+                font-size: 17px;
+
+            }
+
+            .panel {
+
+                padding: 15px;
+
+            }
+
+            .skill-row {
+
+                padding: 11px 6px;
+
+                gap: 8px;
+
+            }
+
+            .skill-name {
+
+                font-size: 11px;
+
+            }
+
+            .skill-status {
+
+                padding: 4px 8px;
+
+                font-size: 8px;
+
+                white-space: nowrap;
+
+            }
+
+            .feedback-total {
+
+                flex-wrap: wrap;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           EMPLOYER FEEDBACK
+        ===================================================== */
+
+        .employer-feedback-panel {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .feedback-summary {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .feedback-total {
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .feedback-total span {
+
+            font-size: 10px;
+
+            color: #9ca3af;
+
+            font-weight: bold;
+
+        }
+
+
+        .feedback-total strong {
+
+            font-size: 24px;
+
+            color: #2563eb;
+
+        }
+
+
+        .feedback-total small {
+
+            color: #6b7280;
+
+            font-size: 10px;
+
+        }
+
+
+        .employer-feedback-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .employer-feedback-card {
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            background: white;
+
+        }
+
+
+        .employer-feedback-top {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .employer-feedback-top strong {
+
+            font-size: 12px;
+
+        }
+
+
+        .feedback-percentage {
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            color: #dc2626;
+
+        }
+
+
+        .feedback-bar {
+
+            width: 100%;
+
+            height: 7px;
+
+            background: #edf0f5;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+        }
+
+
+        .feedback-bar div {
+
+            height: 100%;
+
+            background: #2563eb;
+
+            border-radius: 20px;
+
+        }
+
+
+        .employer-feedback-card small {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #9ca3af;
+
+            font-size: 9px;
+
+        }
+
+
+        .employer-insight {
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            background: #eff6ff;
+
+            border: 1px solid #dbeafe;
+
+            border-radius: 10px;
+
+            color: #374151;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .employer-insights {
+
+            background:white;
+
+            border:1px solid #e5e7eb;
+
+            border-radius:14px;
+
+            padding:22px;
+
+            margin-bottom:20px;
+
+        }
+
+        .employer-insight-grid {
+
+            display:grid;
+
+            grid-template-columns:repeat(5,1fr);
+
+            gap:10px;
+
+        }
+
+        .employer-insight-card {
+
+            border:1px solid #e5e7eb;
+
+            border-radius:10px;
+
+            padding:14px;
+
+        }
+
+        .employer-insight-card strong {
+
+            display:block;
+
+            font-size:11px;
+
+        }
+
+        .employer-insight-card .insight-percent {
+
+            font-size:22px;
+
+            font-weight:bold;
+
+            margin-top:7px;
+
+        }
+
+        .employer-insight-bar {
+
+            height:6px;
+
+            background:#edf0f5;
+
+            border-radius:20px;
+
+            margin-top:9px;
+
+            overflow:hidden;
+
+        }
+
+        .employer-insight-bar div {
+
+            height:100%;
+
+            background:#2563eb;
+
+        }
+
+        .employer-insight-note {
+
+            margin-top:14px;
+
+            background:#eff6ff;
+
+            border:1px solid #dbeafe;
+
+            border-radius:10px;
+
+            padding:13px;
+
+            color:#374151;
+
+            font-size:10px;
+
+            line-height:1.5;
+
+        }
+
+
+        @media(max-width:1100px) {
+
+            .employer-insight-grid {
+
+                grid-template-columns:
+                    repeat(3,1fr);
+
+            }
+
+        }
+
+
+        @media(max-width:700px) {
+
+            .employer-insight-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media(max-width:500px) {
+
+            .employer-insight-grid {
+
+                grid-template-columns:1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+
+            <h2>
+                SKILLVEXA
+            </h2>
+
+            <span>
+                Tamilnadu
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a
+            href="index.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>🏠</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a
+            href="industry.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>🏭</span>
+
+            Industry
+
+        </a>
+
+
+        <a
+            href="student-profile.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>👨‍🎓</span>
+
+            Students
+
+        </a>
+
+
+        <a
+            href="skill-gap.html"
+            class="active"
+            onclick="selectMenu(event,this)"
+        >
+
+            <span>📊</span>
+
+            Skill Gap
+
+        </a>
+
+
+        <a
+            href="government.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>🏛️</span>
+
+            Government
+
+        </a>
+
+
+        <a
+            href="training-centres.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>🏫</span>
+
+            Training Centres
+
+        </a>
+
+
+        <a
+            href="career-path.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>🎯</span>
+
+            Career Path
+
+        </a>
+
+        
+        <a
+            href="district-analytics.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>📍</span>
+
+            District Analytics
+
+        </a>
+
+
+        <a
+            href="employer.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>💼</span>
+
+            Employer
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Skill Gap Analysis
+            </h1>
+
+            <p>
+                Compare student skills with current industry requirements
+            </p>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         INTRO
+    ========================================= -->
+
+    <section class="intro">
+
+        <span class="tag">
+            SKILL GAP INTELLIGENCE
+        </span>
+
+        <h2>
+            Where is the student falling behind industry needs?
+        </h2>
+
+        <p>
+
+            SKILLVEXA compares the skills demanded by industries
+            with the skills currently available in a student's
+            profile. The identified gaps are then converted into
+            training recommendations for government and training
+            centres.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         STUDENT SELECTOR
+    ========================================= -->
+
+    <section class="student-selector">
+
+        <label>
+            Select Student:
+        </label>
+
+        <select
+            id="studentSelect"
+            onchange="loadGapAnalysis()"
+        >
+
+            <option value="">
+                Loading students...
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- =========================================
+         GAP SCORE
+    ========================================= -->
+
+    <section class="gap-card">
+
+        <div class="gap-info">
+
+            <h3>
+                Your Skill Gap
+            </h3>
+
+            <p id="gapDescription">
+
+                Calculating skill gap...
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="gap-circle"
+            id="gapCircle"
+        >
+
+            <div class="gap-percentage">
+
+                <strong id="gapPercentage">
+                    60%
+                </strong>
+
+                <span>
+                    SKILL GAP
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         COMPARISON
+    ========================================= -->
+
+    <section class="comparison-grid">
+
+
+        <!-- INDUSTRY NEEDS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    🏭 Industry Needs
+                </h3>
+
+                <p>
+                    Skills currently demanded by industries
+                </p>
+
+            </div>
+
+
+            <div id="industrySkills">
+
+                <div class="loading">
+                    Loading industry skills...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUDENT HAS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h3>
+                    👨‍🎓 Student Has
+                </h3>
+
+                <p>
+                    Skills currently available in student profile
+                </p>
+
+            </div>
+
+
+            <div id="studentSkills">
+
+                <div class="loading">
+                    Loading student skills...
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================================
+         SKILLS TO IMPROVE
+    ========================================= -->
+
+    <section
+        class="panel"
+        style="margin-bottom:20px;"
+    >
+
+        <div class="panel-header">
+
+            <h3>
+                Skills You Need To Improve
+            </h3>
+
+            <p>
+                Skills required by industry but missing from the student profile
+            </p>
+
+        </div>
+
+
+        <div
+            class="improve-list"
+            id="improveList"
+        >
+
+            <div class="loading">
+                Calculating missing skills...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EMPLOYER FEEDBACK INSIGHTS
+    ===================================================== -->
+
+    <section class="panel employer-feedback-panel">
+
+        <div class="panel-header">
+
+            <h3>
+                💼 Employer Feedback Insights
+            </h3>
+
+            <p>
+                Skills employers frequently report as weak
+                during candidate selection
+            </p>
+
+        </div>
+
+
+        <div class="feedback-summary">
+
+            <div class="feedback-total">
+
+                <span>
+                    TOTAL EMPLOYER FEEDBACK
+                </span>
+
+                <strong id="totalEmployerFeedback">
+                    0
+                </strong>
+
+                <small>
+                    Candidate evaluations recorded
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="employerFeedbackList"
+            class="employer-feedback-list"
+        >
+
+            <div class="loading">
+                Loading employer feedback...
+            </div>
+
+        </div>
+
+
+        <div
+            id="employerFeedbackInsight"
+            class="employer-insight"
+        >
+
+            Loading employer insights...
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GOVERNMENT RECOMMENDATION
+    ========================================= -->
+
+    <section class="recommendation">
+
+
+        <div class="recommendation-header">
+
+            <div class="recommendation-icon">
+                🏛️
+            </div>
+
+            <div>
+
+                <h3>
+                    Government Training Recommendation
+                </h3>
+
+                <p>
+                    Recommended action based on identified skill gaps
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="recommendation-list"
+            id="recommendationList"
+        >
+
+            <div class="recommendation-item">
+
+                <strong>
+                    Training Programs
+                </strong>
+
+                <span>
+                    Industry-aligned courses should be introduced
+                    for the missing skills.
+                </span>
+
+            </div>
+
+
+            <div class="recommendation-item">
+
+                <strong>
+                    Training Centres
+                </strong>
+
+                <span>
+                    Existing centres can add courses based on
+                    regional demand.
+                </span>
+
+            </div>
+
+
+            <div class="recommendation-item">
+
+                <strong>
+                    Industry Collaboration
+                </strong>
+
+                <span>
+                    Companies can participate in curriculum
+                    and practical training.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CORE IDEA FLOW
+    ========================================= -->
+
+    <section class="core-flow">
+
+        <h3>
+            SKILLVEXA Core Decision Flow
+        </h3>
+
+
+        <div class="flow">
+
+            <div class="flow-box">
+
+                <strong>
+                    Industry Needs
+                </strong>
+
+                <small>
+                    What companies want
+                </small>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                <strong>
+                    Student Skills
+                </strong>
+
+                <small>
+                    What students have
+                </small>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                <strong>
+                    Skill Gap
+                </strong>
+
+                <small>
+                    What is missing
+                </small>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+            <div class="flow-box">
+
+                <strong>
+                    Government Action
+                </strong>
+
+                <small>
+                    What training is needed
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script>
+
+
+/* =========================================
+   BACKEND URL
+========================================= */
+
+const BACKEND_URL =
+    "https://skill-vexa-backend.onrender.com";
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+function selectMenu(element) {
+
+
+    const href =
+        element.getAttribute(
+            "href"
+        );
+
+
+    const pageName =
+        element.textContent.trim();
+
+
+    if (
+        !href ||
+        href === "#"
+    ) {
+
+        event.preventDefault();
+
+
+        alert(
+            pageName +
+            " module will be connected next."
+        );
+
+
+        return;
+
+    }
+
+
+    // If a real HTML page exists,
+    // browser automatically moves to it.
+
+}
+
+
+/* =========================================
+   GLOBAL DATA
+========================================= */
+
+let students = [];
+
+let selectedStudent = null;
+
+
+/* =========================================
+   LOAD STUDENTS
+========================================= */
+
+async function loadStudents() {
+
+    try {
+
+        const response =
+            await fetch(
+                `${BACKEND_URL}/api/student-profiles`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        students =
+            data.students;
+
+
+        const select =
+            document.getElementById(
+                "studentSelect"
+            );
+
+
+        select.innerHTML = "";
+
+
+        students.forEach(function(student) {
+
+            const option =
+                document.createElement("option");
+
+
+            option.value =
+                student.id;
+
+
+            option.textContent =
+                student.student_name;
+
+
+            select.appendChild(option);
+
+        });
+
+
+        if (students.length > 0) {
+
+            selectedStudent =
+                students[0].id;
+
+            select.value =
+                selectedStudent;
+
+            loadGapAnalysis();
+
+        }
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "studentSelect"
+        ).innerHTML = `
+
+            <option>
+                Unable to load students
+            </option>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   LOAD GAP ANALYSIS
+========================================= */
+
+async function loadGapAnalysis() {
+
+    const studentId =
+        document.getElementById(
+            "studentSelect"
+        ).value;
+
+
+    if (!studentId) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${BACKEND_URL}/api/skill-gap/${studentId}`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        displayGapAnalysis(
+            data
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        document.getElementById(
+            "gapDescription"
+        ).textContent =
+            "Unable to calculate skill gap.";
+
+    }
+
+}
+
+
+/* =========================================
+   DISPLAY GAP
+========================================= */
+
+function displayGapAnalysis(data) {
+
+    const gap =
+        Number(
+            data.skillGapPercentage
+        );
+
+
+    document.getElementById(
+        "gapPercentage"
+    ).textContent =
+        gap + "%";
+
+
+    document.getElementById(
+        "gapDescription"
+    ).textContent =
+
+        `${data.missingSkills.length} important industry skills are missing from this student's profile.`;
+
+
+    /* =====================================
+       GAP CIRCLE
+    ===================================== */
+
+    const degree =
+        gap * 3.6;
+
+
+    document.getElementById(
+        "gapCircle"
+    ).style.background =
+
+        `conic-gradient(
+            #ef4444 0deg,
+            #ef4444 ${degree}deg,
+            #e5e7eb ${degree}deg,
+            #e5e7eb 360deg
+        )`;
+
+
+    /* =====================================
+       INDUSTRY SKILLS
+    ===================================== */
+
+    const industryContainer =
+        document.getElementById(
+            "industrySkills"
+        );
+
+
+    industryContainer.innerHTML = "";
+
+
+    data.industrySkills.forEach(
+        function(skill) {
+
+            industryContainer.innerHTML += `
+
+                <div class="skill-row">
+
+                    <span class="skill-name">
+
+                        ${escapeHTML(
+                            skill
+                        )}
+
+                    </span>
+
+                    <span class="skill-status industry">
+
+                        ✓ Required
+
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =====================================
+       STUDENT SKILLS
+    ===================================== */
+
+    const studentContainer =
+        document.getElementById(
+            "studentSkills"
+        );
+
+
+    studentContainer.innerHTML = "";
+
+
+    data.industrySkills.forEach(
+        function(skill) {
+
+            const hasSkill =
+                data.studentSkills.some(
+                    function(studentSkill) {
+
+                        return (
+                            studentSkill.skill_name
+                                .toLowerCase()
+                            ===
+                            skill.toLowerCase()
+                        );
+
+                    }
+                );
+
+
+            studentContainer.innerHTML += `
+
+                <div class="skill-row">
+
+                    <span class="skill-name">
+
+                        ${escapeHTML(
+                            skill
+                        )}
+
+                    </span>
+
+                    <span
+                        class="skill-status
+                        ${
+                            hasSkill
+                                ? "have"
+                                : "missing"
+                        }"
+                    >
+
+                        ${
+                            hasSkill
+                                ? "✓ Has Skill"
+                                : "✗ Missing"
+                        }
+
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =====================================
+       MISSING SKILLS
+    ===================================== */
+
+    const improveContainer =
+        document.getElementById(
+            "improveList"
+        );
+
+
+    improveContainer.innerHTML = "";
+
+
+    data.missingSkills.forEach(
+        function(skill) {
+
+            improveContainer.innerHTML += `
+
+                <div class="improve-card">
+
+                    <div class="improve-icon">
+                        ⚠️
+                    </div>
+
+                    <strong>
+                        ${escapeHTML(skill)}
+                    </strong>
+
+                    <small>
+                        Industry demand identified
+                    </small>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /* =====================================
+       RECOMMENDATIONS
+    ===================================== */
+
+    displayRecommendations(
+        data.missingSkills
+    );
+
+}
+
+
+/* =========================================
+   RECOMMENDATIONS
+========================================= */
+
+function displayRecommendations(
+    missingSkills
+) {
+
+    const container =
+        document.getElementById(
+            "recommendationList"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if (
+        missingSkills.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <div class="recommendation-item">
+
+                <strong>
+                    No Major Skill Gap
+                </strong>
+
+                <span>
+                    The student's skills currently
+                    match the identified industry requirements.
+                </span>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    missingSkills.forEach(
+        function(skill) {
+
+            container.innerHTML += `
+
+                <div class="recommendation-item">
+
+                    <strong>
+                        ${escapeHTML(skill)} Training
+                    </strong>
+
+                    <span>
+                        Government and training centres
+                        should provide industry-aligned
+                        ${escapeHTML(skill)} courses.
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   LOAD EMPLOYER FEEDBACK INSIGHTS
+===================================================== */
+
+async function loadEmployerFeedbackInsights() {
+
+    try {
+
+        const response =
+            await fetch(
+                `${BACKEND_URL}/api/employer-feedback-insights`
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load employer feedback."
+            );
+
+        }
+
+
+        // ---------------------------------------------
+        // Total feedback
+        // ---------------------------------------------
+
+        document.getElementById(
+            "totalEmployerFeedback"
+        ).textContent =
+            data.total_feedback;
+
+
+        // ---------------------------------------------
+        // Feedback list
+        // ---------------------------------------------
+
+        const container =
+            document.getElementById(
+                "employerFeedbackList"
+            );
+
+
+        container.innerHTML = "";
+
+
+        if (
+            !data.insights ||
+            data.insights.length === 0
+        ) {
+
+            container.innerHTML = `
+
+                <div class="loading">
+
+                    No employer feedback available yet.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        // ---------------------------------------------
+        // Display feedback
+        // ---------------------------------------------
+
+        data.insights.forEach(
+            function(item) {
+
+                container.innerHTML += `
+
+                    <div
+                        class="employer-feedback-card"
+                    >
+
+                        <div
+                            class="employer-feedback-top"
+                        >
+
+                            <strong>
+
+                                ${escapeHTML(
+                                    item.skill
+                                )}
+
+                            </strong>
+
+                            <span
+                                class="feedback-percentage"
+                            >
+
+                                ${item.percentage}%
+
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="feedback-bar"
+                        >
+
+                            <div
+                                style="
+                                    width:${item.percentage}%;
+                                "
+                            ></div>
+
+                        </div>
+
+
+                        <small>
+
+                            Employers reporting this
+                            as a weakness
+
+                        </small>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        // ---------------------------------------------
+        // Main insight
+        // ---------------------------------------------
+
+        const highest =
+            data.insights[0];
+
+
+        const insight =
+            document.getElementById(
+                "employerFeedbackInsight"
+            );
+
+
+        if (
+            highest &&
+            highest.percentage > 0
+        ) {
+
+            insight.innerHTML = `
+
+                <strong>
+                    💡 Employer Feedback Insight
+                </strong>
+
+                <br><br>
+
+                <strong>
+                    ${escapeHTML(
+                        highest.skill
+                    )}
+                </strong>
+
+                is the most frequently reported
+                weakness, with
+                <strong>
+                    ${highest.percentage}%
+                </strong>
+                of employer feedback identifying it.
+
+                <br><br>
+
+                This indicates that training programs
+                should provide more targeted
+                support in this area.
+
+            `;
+
+        }
+
+        else {
+
+            insight.textContent =
+                "Employer feedback will appear here after companies submit candidate evaluations.";
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Employer feedback error:",
+            error
+        );
+
+
+        document.getElementById(
+            "employerFeedbackList"
+        ).innerHTML = `
+
+            <div class="loading">
+
+                Unable to load employer feedback.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+loadStudents();
+
+loadEmployerFeedbackInsights();
+
+</script>
+
+
+</body>
+
+</html>
+

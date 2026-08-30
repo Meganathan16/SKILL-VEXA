@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    SKILL VEXA | Training Centres
+</title>
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        background: #f5f7fb;
+
+        color: #172033;
+
+    }
+
+
+    /* =================================================
+       SIDEBAR
+    ================================================= */
+
+    .sidebar {
+
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        width: 250px;
+
+        height: 100vh;
+
+        background: #111827;
+
+        color: white;
+
+        padding: 25px 16px;
+
+        z-index: 100;
+
+    }
+
+
+    .logo {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding:
+            5px 10px 30px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 44px;
+        height: 44px;
+
+        border-radius: 11px;
+
+        background: #2563eb;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-weight: bold;
+
+    }
+
+
+    .logo h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 10px;
+
+        color: #9ca3af;
+
+    }
+
+
+    nav {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+    }
+
+
+    nav a {
+
+        text-decoration: none;
+
+        color: #9ca3af;
+
+        padding: 13px 14px;
+
+        border-radius: 9px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        font-size: 14px;
+
+    }
+
+
+    nav a:hover {
+
+        background: #1f2937;
+
+        color: white;
+
+    }
+
+
+    nav a.active {
+
+        background: #2563eb;
+
+        color: white;
+
+    }
+
+
+    .sidebar-bottom {
+
+        position: absolute;
+
+        bottom: 25px;
+
+        left: 20px;
+
+        right: 20px;
+
+    }
+
+
+    .admin-box {
+
+        border-top:
+            1px solid #374151;
+
+        padding-top: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+    }
+
+
+    .admin-avatar {
+
+        width: 36px;
+        height: 36px;
+
+        border-radius: 50%;
+
+        background: #374151;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 11px;
+
+    }
+
+
+    .admin-box strong {
+
+        display: block;
+
+        font-size: 13px;
+
+    }
+
+
+    .admin-box small {
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =================================================
+       MAIN
+    ================================================= */
+
+    .main {
+
+        margin-left: 250px;
+
+        min-height: 100vh;
+
+        padding: 25px 35px;
+
+    }
+
+
+    /* =================================================
+       TOPBAR
+    ================================================= */
+
+    .topbar {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .topbar h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .topbar p {
+
+        margin-top: 5px;
+
+        color: #6b7280;
+
+        font-size: 13px;
+
+    }
+
+
+    .profile {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+    }
+
+
+    .profile-avatar {
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+
+        background: #2563eb;
+
+        color: white;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-weight: bold;
+
+    }
+
+
+    .profile strong {
+
+        display: block;
+
+        font-size: 13px;
+
+    }
+
+
+    .profile small {
+
+        color: #6b7280;
+
+        font-size: 11px;
+
+    }
+
+
+    /* =================================================
+       INTRO
+    ================================================= */
+
+    .page-intro {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 15px;
+
+        padding: 25px 28px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .page-tag {
+
+        color: #2563eb;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .page-intro h2 {
+
+        margin: 7px 0;
+
+        font-size: 22px;
+
+    }
+
+
+    .page-intro p {
+
+        max-width: 850px;
+
+        color: #6b7280;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /* =================================================
+       SUMMARY
+    ================================================= */
+
+    .summary-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .summary-card {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 12px;
+
+        padding: 18px;
+
+    }
+
+
+    .summary-card span {
+
+        color: #6b7280;
+
+        font-size: 10px;
+
+    }
+
+
+    .summary-card h3 {
+
+        font-size: 24px;
+
+        margin-top: 8px;
+
+    }
+
+
+    .summary-card small {
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =================================================
+       FILTER
+    ================================================= */
+
+    .filter-bar {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 12px;
+
+        padding: 15px;
+
+        display: flex;
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .search {
+
+        flex: 1;
+
+        padding: 11px 14px;
+
+        border:
+            1px solid #dbe1ea;
+
+        border-radius: 8px;
+
+        outline: none;
+
+        min-width: 0;
+
+    }
+
+
+    .search:focus {
+
+        border-color: #2563eb;
+
+    }
+
+
+    select {
+
+        padding: 10px 14px;
+
+        border:
+            1px solid #dbe1ea;
+
+        border-radius: 8px;
+
+        background: white;
+
+        cursor: pointer;
+
+    }
+
+
+    /* =================================================
+       TRAINING CENTRE GRID
+    ================================================= */
+
+    .centre-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+
+    }
+
+
+    .centre-card {
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 14px;
+
+        padding: 22px;
+
+        min-width: 0;
+
+    }
+
+
+    .centre-header {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+
+        margin-bottom: 20px;
+
+        gap: 10px;
+
+    }
+
+
+    .centre-title {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        min-width: 0;
+
+    }
+
+
+    .centre-icon {
+
+        width: 44px;
+        height: 44px;
+
+        flex-shrink: 0;
+
+        border-radius: 10px;
+
+        background: #eff6ff;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 20px;
+
+    }
+
+
+    .centre-title h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .centre-title span {
+
+        display: block;
+
+        color: #9ca3af;
+
+        font-size: 10px;
+
+        margin-top: 4px;
+
+    }
+
+
+    .centre-status {
+
+        padding: 5px 9px;
+
+        background: #dcfce7;
+
+        color: #15803d;
+
+        border-radius: 20px;
+
+        font-size: 9px;
+
+        font-weight: bold;
+
+        flex-shrink: 0;
+
+    }
+
+
+    /* =================================================
+       COURSE
+    ================================================= */
+
+    .course {
+
+        border:
+            1px solid #edf0f4;
+
+        border-radius: 10px;
+
+        padding: 14px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .course-top {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+
+        margin-bottom: 10px;
+
+        gap: 10px;
+
+    }
+
+
+    .course-name {
+
+        font-weight: bold;
+
+        font-size: 12px;
+
+    }
+
+
+    .seat-count {
+
+        font-size: 11px;
+
+        font-weight: bold;
+
+        white-space: nowrap;
+
+    }
+
+
+    .seat-bar {
+
+        width: 100%;
+
+        height: 7px;
+
+        background: #edf0f5;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+    }
+
+
+    .seat-bar div {
+
+        height: 100%;
+
+        background: #2563eb;
+
+        border-radius: 20px;
+
+    }
+
+
+    .course-bottom {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        margin-top: 8px;
+
+        font-size: 9px;
+
+        color: #9ca3af;
+
+        gap: 10px;
+
+    }
+
+
+    .available {
+
+        color: #15803d;
+
+    }
+
+
+    /* =================================================
+       CAPACITY ANALYSIS
+    ================================================= */
+
+    .capacity-panel {
+
+        margin-top: 20px;
+
+        background: white;
+
+        border:
+            1px solid #e5e7eb;
+
+        border-radius: 14px;
+
+        padding: 22px;
+
+    }
+
+
+    .panel-header {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .panel-header h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .panel-header p {
+
+        color: #9ca3af;
+
+        font-size: 11px;
+
+        margin-top: 4px;
+
+    }
+
+
+    .capacity-table {
+
+        width: 100%;
+
+        border-collapse:
+            collapse;
+
+    }
+
+
+    .capacity-table th {
+
+        text-align: left;
+
+        font-size: 10px;
+
+        color: #9ca3af;
+
+        padding: 11px;
+
+        border-bottom:
+            1px solid #e5e7eb;
+
+    }
+
+
+    .capacity-table td {
+
+        padding: 14px 11px;
+
+        font-size: 11px;
+
+        border-bottom:
+            1px solid #f0f1f4;
+
+    }
+
+
+    .need {
+
+        color: #dc2626;
+
+        font-weight: bold;
+
+    }
+
+
+    .good {
+
+        color: #15803d;
+
+        font-weight: bold;
+
+    }
+
+
+    .warning {
+
+        color: #d97706;
+
+        font-weight: bold;
+
+    }
+
+
+    /* =================================================
+       GOVERNMENT INSIGHT
+    ================================================= */
+
+    .government-insight {
+
+        margin-top: 20px;
+
+        padding: 18px;
+
+        background: #eff6ff;
+
+        border:
+            1px solid #dbeafe;
+
+        border-radius: 11px;
+
+    }
+
+
+    .government-insight strong {
+
+        color: #1d4ed8;
+
+        font-size: 12px;
+
+    }
+
+
+    .government-insight p {
+
+        margin-top: 6px;
+
+        color: #4b5563;
+
+        font-size: 11px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* =================================================
+       RESPONSIVE
+    ================================================= */
+
+    @media (max-width: 1100px) {
+
+        .summary-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+        .centre-grid {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+        .sidebar {
+
+            width: 70px;
+
+        }
+
+
+        .logo div:not(.logo-icon) {
+
+            display: none;
+
+        }
+
+
+        nav a {
+
+            font-size: 0;
+
+            justify-content:
+                center;
+
+            padding-left: 8px;
+            padding-right: 8px;
+
+        }
+
+
+        nav a span {
+
+            font-size: 18px;
+
+        }
+
+
+        .sidebar-bottom {
+
+            left: 10px;
+            right: 10px;
+
+        }
+
+
+        .admin-box {
+
+            justify-content: center;
+
+        }
+
+
+        .admin-box > div:last-child {
+
+            display: none;
+
+        }
+
+
+        .main {
+
+            margin-left: 70px;
+
+            padding: 20px;
+
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .main {
+
+            margin-left: 70px;
+
+            padding: 15px;
+
+        }
+
+
+        .summary-grid {
+
+            grid-template-columns: 1fr;
+
+        }
+
+
+        .filter-bar {
+
+            flex-direction: column;
+
+        }
+
+
+        .search,
+        select {
+
+            width: 100%;
+
+        }
+
+
+        .topbar {
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+        }
+
+
+        .profile {
+
+            display: none;
+
+        }
+
+
+        .topbar h1 {
+
+            font-size: 23px;
+
+        }
+
+
+        .topbar p {
+
+            font-size: 12px;
+
+        }
+
+
+        .page-intro {
+
+            padding: 20px;
+
+        }
+
+
+        .page-intro h2 {
+
+            font-size: 19px;
+
+        }
+
+
+        .centre-card {
+
+            padding: 16px;
+
+        }
+
+
+        .centre-header {
+
+            align-items: flex-start;
+
+        }
+
+
+        .centre-title h3 {
+
+            font-size: 14px;
+
+        }
+
+
+        .course {
+
+            padding: 12px;
+
+        }
+
+
+        .course-bottom {
+
+            flex-direction: column;
+
+            gap: 3px;
+
+        }
+
+
+        .capacity-panel {
+
+            padding: 15px;
+
+        }
+
+
+        .capacity-table {
+
+            min-width: 650px;
+
+        }
+
+
+        .government-insight {
+
+            padding: 15px;
+
+        }
+
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- =================================================
+     SIDEBAR
+================================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+
+            <h2>
+                SKILLVEXA
+            </h2>
+
+            <span>
+                Tamilnadu
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html" onclick="selectMenu(this)">
+
+            <span>🏠</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="industry.html" onclick="selectMenu(this)">
+
+            <span>🏭</span>
+
+            Industry
+
+        </a>
+
+
+        <a href="student-profile.html" onclick="selectMenu(this)">
+
+            <span>👨‍🎓</span>
+
+            Students
+
+        </a>
+
+
+        <a href="skill-gap.html" onclick="selectMenu(this)">
+
+            <span>📊</span>
+
+            Skill Gap
+
+        </a>
+
+
+        <a href="government.html" onclick="selectMenu(this)">
+
+            <span>🏛️</span>
+
+            Government
+
+        </a>
+
+
+        <a
+            href="training-centres.html"
+            class="active"
+            onclick="selectMenu(event,this)"
+        >
+
+            <span>🏫</span>
+
+            Training Centres
+
+        </a>
+
+
+        <a href="career-path.html" onclick="selectMenu(this)">
+
+            <span>🎯</span>
+
+            Career Path
+
+        </a>
+
+
+        <a href="district-analytics.html" onclick="selectMenu(this)">
+
+            <span>📍</span>
+
+            District Analytics
+
+        </a>
+
+
+        <a href="employer.html" onclick="selectMenu(this)">
+
+            <span>💼</span>
+
+            Employer
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =================================================
+     MAIN
+================================================= -->
+
+<main class="main">
+
+
+    <!-- =================================================
+         TOPBAR
+    ================================================= -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                Training Centres
+            </h1>
+
+            <p>
+                Monitor training capacity against industry demand
+            </p>
+
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+                B.M
+            </div>
+
+            <div>
+
+                <strong>
+                    Meganathan Admin
+                </strong>
+
+                <small>
+                    Tamilnadu
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section class="page-intro">
+
+        <span class="page-tag">
+            TRAINING CAPACITY
+        </span>
+
+
+        <h2>
+            Are training centres meeting industry demand?
+        </h2>
+
+
+        <p>
+
+            Compare available training seats with current
+            industry requirements. This helps the government
+            identify where additional training capacity,
+            courses and infrastructure are required.
+
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================= -->
+
+    <section class="summary-grid">
+
+
+        <div class="summary-card">
+
+            <span>
+                TRAINING CENTRES
+            </span>
+
+            <h3>
+                120
+            </h3>
+
+            <small>
+                Active centres
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                TOTAL CAPACITY
+            </span>
+
+            <h3>
+                8,450
+            </h3>
+
+            <small>
+                Available training seats
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                INDUSTRY DEMAND
+            </span>
+
+            <h3>
+                11,200
+            </h3>
+
+            <small>
+                Required seats
+            </small>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                ADDITIONAL NEED
+            </span>
+
+            <h3>
+                2,750
+            </h3>
+
+            <small>
+                More seats required
+            </small>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         FILTER
+    ================================================= -->
+
+    <section class="filter-bar">
+
+
+        <input
+            class="search"
+            id="searchInput"
+            type="text"
+            placeholder="Search training centre or course..."
+            oninput="filterCentres()"
+        >
+
+
+        <select
+            id="districtFilter"
+            onchange="filterCentres()"
+        >
+
+            <option value="all">
+                All Districts
+            </option>
+
+            <option value="Chennai">
+                Chennai
+            </option>
+
+            <option value="Trichy">
+                Trichy
+            </option>
+
+            <option value="Coimbatore">
+                Coimbatore
+            </option>
+
+            <option value="Madurai">
+                Madurai
+            </option>
+
+        </select>
+
+
+    </section>
+
+
+    <!-- =================================================
+         TRAINING CENTRES
+    ================================================= -->
+
+    <section
+        class="centre-grid"
+        id="centreGrid"
+    >
+
+
+        <!-- CHENNAI -->
+
+        <div
+            class="centre-card"
+            data-district="Chennai"
+        >
+
+
+            <div class="centre-header">
+
+
+                <div class="centre-title">
+
+                    <div class="centre-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Chennai Training Centre
+                        </h3>
+
+                        <span>
+                            Chennai District
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="centre-status">
+                    ACTIVE
+                </span>
+
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        AI / ML
+                    </span>
+
+                    <span class="seat-count">
+                        50 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 72%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 50
+                    </span>
+
+                    <span class="available">
+                        Available: 18
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Cloud Computing
+                    </span>
+
+                    <span class="seat-count">
+                        30 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 85%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 30
+                    </span>
+
+                    <span class="available">
+                        Available: 8
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Power BI
+                    </span>
+
+                    <span class="seat-count">
+                        40 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 65%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 40
+                    </span>
+
+                    <span class="available">
+                        Available: 14
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- TRICHY -->
+
+        <div
+            class="centre-card"
+            data-district="Trichy"
+        >
+
+
+            <div class="centre-header">
+
+
+                <div class="centre-title">
+
+                    <div class="centre-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Trichy Training Centre
+                        </h3>
+
+                        <span>
+                            Trichy District
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="centre-status">
+                    ACTIVE
+                </span>
+
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        AI / ML
+                    </span>
+
+                    <span class="seat-count">
+                        40 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 60%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 40
+                    </span>
+
+                    <span class="available">
+                        Available: 16
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Java
+                    </span>
+
+                    <span class="seat-count">
+                        60 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 78%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 60
+                    </span>
+
+                    <span class="available">
+                        Available: 13
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Cloud Computing
+                    </span>
+
+                    <span class="seat-count">
+                        25 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 90%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 25
+                    </span>
+
+                    <span class="available">
+                        Available: 3
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- COIMBATORE -->
+
+        <div
+            class="centre-card"
+            data-district="Coimbatore"
+        >
+
+
+            <div class="centre-header">
+
+
+                <div class="centre-title">
+
+                    <div class="centre-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Coimbatore Training Centre
+                        </h3>
+
+                        <span>
+                            Coimbatore District
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="centre-status">
+                    ACTIVE
+                </span>
+
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Python
+                    </span>
+
+                    <span class="seat-count">
+                        55 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 68%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 55
+                    </span>
+
+                    <span class="available">
+                        Available: 17
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Data Science
+                    </span>
+
+                    <span class="seat-count">
+                        45 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 82%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 45
+                    </span>
+
+                    <span class="available">
+                        Available: 8
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Cloud Computing
+                    </span>
+
+                    <span class="seat-count">
+                        35 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 88%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 35
+                    </span>
+
+                    <span class="available">
+                        Available: 4
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MADURAI -->
+
+        <div
+            class="centre-card"
+            data-district="Madurai"
+        >
+
+
+            <div class="centre-header">
+
+
+                <div class="centre-title">
+
+                    <div class="centre-icon">
+                        🏫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Madurai Training Centre
+                        </h3>
+
+                        <span>
+                            Madurai District
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="centre-status">
+                    ACTIVE
+                </span>
+
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        AI / ML
+                    </span>
+
+                    <span class="seat-count">
+                        35 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 55%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 35
+                    </span>
+
+                    <span class="available">
+                        Available: 16
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Python
+                    </span>
+
+                    <span class="seat-count">
+                        50 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 70%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 50
+                    </span>
+
+                    <span class="available">
+                        Available: 15
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="course">
+
+                <div class="course-top">
+
+                    <span class="course-name">
+                        Power BI
+                    </span>
+
+                    <span class="seat-count">
+                        30 seats
+                    </span>
+
+                </div>
+
+
+                <div class="seat-bar">
+
+                    <div style="width: 62%;">
+                    </div>
+
+                </div>
+
+
+                <div class="course-bottom">
+
+                    <span>
+                        Capacity: 30
+                    </span>
+
+                    <span class="available">
+                        Available: 11
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         CAPACITY ANALYSIS
+    ================================================= -->
+
+    <section class="capacity-panel">
+
+
+        <div class="panel-header">
+
+            <h3>
+                Required Capacity vs Available Capacity
+            </h3>
+
+            <p>
+                Identify where additional training seats are required
+            </p>
+
+        </div>
+
+
+        <div style="overflow-x:auto;">
+
+
+            <table class="capacity-table">
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            SKILL
+                        </th>
+
+                        <th>
+                            INDUSTRY DEMAND
+                        </th>
+
+                        <th>
+                            CURRENT CAPACITY
+                        </th>
+
+                        <th>
+                            ADDITIONAL NEED
+                        </th>
+
+                        <th>
+                            STATUS
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Cloud Computing
+                            </strong>
+                        </td>
+
+                        <td>
+                            500 students
+                        </td>
+
+                        <td>
+                            300 students
+                        </td>
+
+                        <td class="need">
+                            200 seats
+                        </td>
+
+                        <td class="need">
+                            Capacity Shortage
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                AI / ML
+                            </strong>
+                        </td>
+
+                        <td>
+                            420 students
+                        </td>
+
+                        <td>
+                            280 students
+                        </td>
+
+                        <td class="need">
+                            140 seats
+                        </td>
+
+                        <td class="need">
+                            Capacity Shortage
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Power BI
+                            </strong>
+                        </td>
+
+                        <td>
+                            350 students
+                        </td>
+
+                        <td>
+                            250 students
+                        </td>
+
+                        <td class="need">
+                            100 seats
+                        </td>
+
+                        <td class="warning">
+                            Moderate Gap
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Python
+                            </strong>
+                        </td>
+
+                        <td>
+                            450 students
+                        </td>
+
+                        <td>
+                            440 students
+                        </td>
+
+                        <td class="good">
+                            10 seats
+                        </td>
+
+                        <td class="good">
+                            Nearly Covered
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Java
+                            </strong>
+                        </td>
+
+                        <td>
+                            300 students
+                        </td>
+
+                        <td>
+                            350 students
+                        </td>
+
+                        <td class="good">
+                            0 seats
+                        </td>
+
+                        <td class="good">
+                            Capacity Available
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+
+
+        <!-- GOVERNMENT INSIGHT -->
+
+        <div class="government-insight">
+
+            <strong>
+                💡 SKILLVEXA GOVERNMENT INSIGHT
+            </strong>
+
+            <p>
+
+                Cloud Computing has the highest capacity
+                shortage. Industry demand is approximately
+                500 students while current training capacity
+                is only 300 seats. The government should
+                consider adding approximately 200 seats and
+                expanding Cloud Computing training programs.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================= -->
+
+<script>
+
+
+    // =================================================
+    // SKILLVEXA BACKEND
+    // =================================================
+
+    const BACKEND_URL =
+        "https://skill-vexa-backend.onrender.com";
+
+
+    // =================================================
+    // TRAINING CENTRE SEARCH
+    // =================================================
+
+    function filterCentres() {
+
+
+        const search =
+            document
+                .getElementById(
+                    "searchInput"
+                )
+                .value
+                .toLowerCase();
+
+
+        const district =
+            document
+                .getElementById(
+                    "districtFilter"
+                )
+                .value;
+
+
+        const centres =
+            document.querySelectorAll(
+                ".centre-card"
+            );
+
+
+        centres.forEach(
+            function(centre) {
+
+
+                const text =
+                    centre.textContent
+                        .toLowerCase();
+
+
+                const centreDistrict =
+                    centre.dataset.district;
+
+
+                const matchesSearch =
+                    text.includes(
+                        search
+                    );
+
+
+                const matchesDistrict =
+                    district === "all" ||
+                    centreDistrict === district;
+
+
+                if (
+                    matchesSearch &&
+                    matchesDistrict
+                ) {
+
+                    centre.style.display =
+                        "block";
+
+                }
+
+                else {
+
+                    centre.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // =================================================
+    // SIDEBAR
+    // =================================================
+
+    function selectMenu(element) {
+
+
+        const href =
+            element.getAttribute(
+                "href"
+            );
+
+
+        const pageName =
+            element.textContent.trim();
+
+
+        if (
+            !href ||
+            href === "#"
+        ) {
+
+            event.preventDefault();
+
+
+            alert(
+                pageName +
+                " module will be connected next."
+            );
+
+
+            return;
+
+        }
+
+
+        // If a real HTML page exists,
+        // browser automatically moves to it.
+
+    }
+
+
+
+</script>
+
+
+</body>
+
+</html>
