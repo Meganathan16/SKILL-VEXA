@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>SKILL VEXA | Dashboard</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fb;
+        color: #172033;
+        overflow-x: hidden;
+    }
+
+    /* ================= SIDEBAR ================= */
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #111827;
+        color: white;
+        padding: 25px 16px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 5px 10px 30px;
+    }
+
+    .logo-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: #2563eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 15px;
+        flex-shrink: 0;
+    }
+
+    .logo h2 {
+        font-size: 19px;
+    }
+
+    .logo span {
+        display: block;
+        font-size: 10px;
+        color: #9ca3af;
+        margin-top: 3px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #9ca3af;
+        padding: 13px 14px;
+        border-radius: 9px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    nav a:hover {
+        background: #1f2937;
+        color: white;
+    }
+
+    nav a.active {
+        background: #2563eb;
+        color: white;
+    }
+
+    nav a span {
+        width: 20px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .sidebar-bottom {
+        margin-top: auto;
+    }
+
+    .admin-box {
+        border-top: 1px solid #374151;
+        padding: 18px 8px 0;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .admin-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #374151;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .admin-box strong {
+        display: block;
+        font-size: 13px;
+    }
+
+    .admin-box small {
+        color: #9ca3af;
+        font-size: 10px;
+    }
+
+    /* ================= MAIN ================= */
+
+    .main {
+        margin-left: 250px;
+        min-height: 100vh;
+        padding: 25px 35px;
+        width: calc(100% - 250px);
+    }
+
+    /* ================= TOPBAR ================= */
+
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .topbar h1 {
+        font-size: 27px;
+    }
+
+    .topbar p {
+        margin-top: 5px;
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+    .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .notification {
+        border: none;
+        background: white;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        font-size: 17px;
+        flex-shrink: 0;
+    }
+
+    .notification-dot {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: #ef4444;
+        border-radius: 50%;
+        top: 8px;
+        right: 9px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .profile strong {
+        display: block;
+        font-size: 13px;
+    }
+
+    .profile small {
+        font-size: 11px;
+        color: #6b7280;
+    }
+
+    /* ================= WELCOME ================= */
+
+    .welcome {
+        background: white;
+        border-radius: 15px;
+        padding: 25px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22px;
+        border: 1px solid #e5e7eb;
+        gap: 20px;
+    }
+
+    .tag {
+        font-size: 10px;
+        font-weight: bold;
+        color: #2563eb;
+        letter-spacing: 1px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+        margin: 7px 0;
+    }
+
+    .welcome p {
+        color: #6b7280;
+        font-size: 13px;
+        max-width: 650px;
+        line-height: 1.5;
+    }
+
+    .date-box {
+        text-align: right;
+        flex-shrink: 0;
+    }
+
+    .date-box span {
+        display: block;
+        color: #9ca3af;
+        font-size: 11px;
+    }
+
+    .date-box strong {
+        font-size: 13px;
+        margin-top: 4px;
+        display: block;
+    }
+
+    /* ================= STAT CARDS ================= */
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+        margin-bottom: 22px;
+    }
+
+    .stat-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 19px;
+        min-height: 155px;
+        transition: 0.2s;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .stat-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+    }
+
+    .students {
+        background: #dbeafe;
+    }
+
+    .industries {
+        background: #ede9fe;
+    }
+
+    .gap {
+        background: #fee2e2;
+    }
+
+    .training {
+        background: #dcfce7;
+    }
+
+    .jobs {
+        background: #fef3c7;
+    }
+
+    .stat-card p {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 4px;
+    }
+
+    .stat-card h2 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .description {
+        font-size: 10px;
+        color: #9ca3af;
+    }
+
+    .trend {
+        background: #dcfce7;
+        color: #15803d;
+        padding: 4px 7px;
+        border-radius: 20px;
+        font-size: 9px;
+        font-weight: bold;
+    }
+
+    .warning {
+        background: #fee2e2;
+        color: #dc2626;
+        padding: 4px 7px;
+        border-radius: 20px;
+        font-size: 9px;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .panel {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 22px;
+        min-width: 0;
+    }
+
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+
+    .panel-header h3 {
+        font-size: 16px;
+    }
+
+    .panel-header p {
+        font-size: 11px;
+        color: #9ca3af;
+        margin-top: 4px;
+    }
+
+    .view-btn {
+        border: 1px solid #dbeafe;
+        background: #eff6ff;
+        color: #2563eb;
+        padding: 7px 12px;
+        border-radius: 7px;
+        font-size: 11px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* ================= SKILL BARS ================= */
+
+    .skill-row {
+        margin-bottom: 17px;
+    }
+
+    .skill-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .skill-info span:last-child {
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .progress {
+        width: 100%;
+        height: 7px;
+        background: #edf0f5;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: #2563eb;
+        border-radius: 20px;
+        transition: width 1s ease;
+    }
+
+    /* ================= GAP ================= */
+
+    .gap-panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gap-circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 10px auto 18px;
+        background:
+            conic-gradient(
+                #2563eb 0deg 136.8deg,
+                #e5e7eb 136.8deg 360deg
+            );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gap-circle-inner {
+        width: 108px;
+        height: 108px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gap-circle strong {
+        font-size: 27px;
+    }
+
+    .gap-circle span {
+        font-size: 10px;
+        color: #9ca3af;
+    }
+
+    .gap-info {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 10px;
+        color: #6b7280;
+        flex-wrap: wrap;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .demand {
+        background: #2563eb;
+    }
+
+    .student {
+        background: #d1d5db;
+    }
+
+    /* ================= GOVERNMENT ================= */
+
+    .recommendation {
+        background: #111827;
+        color: white;
+        border-radius: 14px;
+        padding: 22px 25px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .recommendation-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        background: #1f2937;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    .recommendation-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .recommendation-content > span {
+        font-size: 9px;
+        letter-spacing: 1px;
+        color: #93c5fd;
+        font-weight: bold;
+    }
+
+    .recommendation-content h3 {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+
+    .recommendation-content p {
+        color: #9ca3af;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .recommendation-btn {
+        border: none;
+        background: white;
+        color: #111827;
+        padding: 11px 16px;
+        border-radius: 8px;
+        font-size: 11px;
+        font-weight: bold;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .recommendation-btn:hover {
+        background: #e5e7eb;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1200px) {
+
+        .stats-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+
+    @media (max-width: 850px) {
+
+        .sidebar {
+            width: 70px;
+        }
+
+        .logo {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .logo div:not(.logo-icon) {
+            display: none;
+        }
+
+        nav a {
+            justify-content: center;
+            font-size: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        nav a span {
+            font-size: 18px;
+        }
+
+        .admin-box {
+            justify-content: center;
+        }
+
+        .admin-box div:not(.admin-avatar) {
+            display: none;
+        }
+
+        .main {
+            margin-left: 70px;
+            width: calc(100% - 70px);
+            padding: 20px;
+        }
+
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .main {
+            padding: 15px;
+        }
+
+        .topbar {
+            align-items: flex-start;
+        }
+
+        .topbar h1 {
+            font-size: 23px;
+        }
+
+        .topbar p {
+            font-size: 11px;
+        }
+
+        .top-actions {
+            gap: 8px;
+        }
+
+        .notification {
+            width: 38px;
+            height: 38px;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .welcome {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .welcome h2 {
+            font-size: 20px;
+        }
+
+        .welcome p {
+            font-size: 12px;
+        }
+
+        .date-box {
+            text-align: left;
+        }
+
+        .panel {
+            padding: 18px;
+        }
+
+        .panel-header {
+            align-items: flex-start;
+        }
+
+        .gap-info {
+            gap: 10px;
+        }
+
+        .recommendation {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .recommendation-btn {
+            width: 100%;
+        }
+
+        .top-actions .profile {
+            display: none;
+        }
+
+    }
+
+    @media (max-width: 400px) {
+
+        .sidebar {
+            width: 60px;
+        }
+
+        .main {
+            margin-left: 60px;
+            width: calc(100% - 60px);
+            padding: 12px;
+        }
+
+        nav a {
+            padding: 11px 5px;
+        }
+
+        .topbar h1 {
+            font-size: 21px;
+        }
+
+        .welcome {
+            padding: 16px;
+        }
+
+        .stat-card {
+            padding: 16px;
+        }
+
+        .gap-circle {
+            width: 135px;
+            height: 135px;
+        }
+
+        .gap-circle-inner {
+            width: 98px;
+            height: 98px;
+        }
+
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            SV
+        </div>
+
+        <div>
+            <h2>SKILLVEXA</h2>
+            <span>Tamilnadu</span>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="#" class="active" onclick="selectMenu(event, this)">
+            <span>🏠</span>
+            Dashboard
+        </a>
+
+        <a href="industry.html" onclick="selectMenu(this)">
+            <span>🏭</span>
+            Industry
+        </a>
+
+        <a href="student-profile.html" onclick="selectMenu(this)">
+            <span>👨‍🎓</span>
+            Students
+        </a>
+
+        <a href="skill-gap.html" onclick="selectMenu(this)">
+            <span>📊</span>
+            Skill Gap
+        </a>
+
+        <a href="government.html" onclick="selectMenu(this)">
+            <span>🏛️</span>
+            Government
+        </a>
+
+        <a href="training-centres.html" onclick="selectMenu(this)">
+            <span>🏫</span>
+            Training Centres
+        </a>
+
+        <a href="career-path.html" onclick="selectMenu(this)">
+            <span>🎯</span>
+            Career Path
+        </a>
+
+        <a
+            href="district-analytics.html"
+            onclick="selectMenu(this)"
+        >
+
+            <span>📍</span>
+
+            District Analytics
+
+        </a>
+
+        <a href="employer.html" onclick="selectMenu(this)">
+            <span>💼</span>
+            Employer
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-box">
+
+            <div class="admin-avatar">
+                B.M
+            </div>
+
+            <div>
+                <strong>B.M</strong>
+                <small>Job Market Portal</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Industry–Student Skill Intelligence
+            </p>
+
+        </div>
+
+        <div class="top-actions">
+
+            <button
+                class="notification"
+                onclick="showNotification()"
+            >
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    B.M
+                </div>
+
+                <div>
+
+                    <strong>
+                        Meganathan Admin
+                    </strong>
+
+                    <small>
+                        Tamilnadu
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= WELCOME ================= -->
+
+    <section class="welcome">
+
+        <div>
+
+            <span class="tag">
+                SKILL INTELLIGENCE SYSTEM
+            </span>
+
+            <h2>
+                Welcome to SKILLVEXA
+            </h2>
+
+            <p>
+                Monitor industry requirements,
+                student skills, skill gaps and
+                training opportunities across
+                Tamilnadu.
+            </p>
+
+        </div>
+
+        <div class="date-box">
+
+            <span>
+                Last Updated
+            </span>
+
+            <strong id="currentDate">
+                Loading...
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon students">
+                    👨‍🎓
+                </div>
+
+                <span class="trend">
+                    +12.5%
+                </span>
+
+            </div>
+
+            <p>Total Students</p>
+
+            <h2 id="totalStudents">
+                25,430
+            </h2>
+
+            <span class="description">
+                Registered students
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon industries">
+                    🏭
+                </div>
+
+                <span class="trend">
+                    +8.2%
+                </span>
+
+            </div>
+
+            <p>Total Industries</p>
+
+            <h2 id="totalIndustries">
+                850
+            </h2>
+
+            <span class="description">
+                Industry partners
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon gap">
+                    📊
+                </div>
+
+                <span class="warning">
+                    Attention
+                </span>
+
+            </div>
+
+            <p>Overall Skill Gap</p>
+
+            <h2 id="skillGap">
+                38%
+            </h2>
+
+            <span class="description">
+                Industry–student gap
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon training">
+                    🏫
+                </div>
+
+                <span class="trend">
+                    +5.4%
+                </span>
+
+            </div>
+
+            <p>Training Centres</p>
+
+            <h2 id="trainingCentres">
+                120
+            </h2>
+
+            <span class="description">
+                Active centres
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div class="stat-icon jobs">
+                    💼
+                </div>
+
+                <span class="trend">
+                    +15.8%
+                </span>
+
+            </div>
+
+            <p>Job Opportunities</p>
+
+            <h2 id="jobOpportunities">
+                12,450
+            </h2>
+
+            <span class="description">
+                Current opportunities
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS + GAP ================= -->
+
+    <section class="content-grid">
+
+        <!-- DEMANDED SKILLS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h3>
+                        Most Demanded Skills
+                    </h3>
+
+                    <p>
+                        Skills currently required
+                        by industries
+                    </p>
+
+                </div>
+
+                <button
+                    class="view-btn"
+                    onclick="viewAllSkills()"
+                >
+                    View All
+                </button>
+
+            </div>
+
+
+            <div id="skillsList">
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>Python</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:85%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>Data Analytics</span>
+                        <span>82%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:82%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>Cloud Computing</span>
+                        <span>78%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:78%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>AI / Machine Learning</span>
+                        <span>75%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:75%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>Cybersecurity</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:70%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+                        <span>SQL</span>
+                        <span>68%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-bar"
+                            style="width:68%"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GAP OVERVIEW -->
+
+        <div class="panel gap-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h3>
+                        Skill Gap Overview
+                    </h3>
+
+                    <p>
+                        Industry demand vs
+                        student availability
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="gap-circle">
+
+                <div class="gap-circle-inner">
+
+                    <strong>
+                        38%
+                    </strong>
+
+                    <span>
+                        Overall Gap
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="gap-info">
+
+                <div>
+                    <span class="dot demand"></span>
+                    Industry Demand
+                </div>
+
+                <div>
+                    <span class="dot student"></span>
+                    Student Availability
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GOVERNMENT INSIGHT ================= -->
+
+    <section class="recommendation">
+
+        <div class="recommendation-icon">
+            🏛️
+        </div>
+
+        <div class="recommendation-content">
+
+            <span>
+                GOVERNMENT INSIGHT
+            </span>
+
+            <h3>
+                High demand detected for
+                AI/ML and Cloud Computing
+            </h3>
+
+            <p>
+                Consider increasing training
+                capacity and introducing
+                industry-aligned programmes
+                in these skills.
+            </p>
+
+        </div>
+
+        <button
+            class="recommendation-btn"
+            onclick="openRecommendations()"
+        >
+            View Recommendations →
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* ================= BACKEND API ================= */
+
+    const BACKEND_URL =
+        "https://skill-vexa-backend.onrender.com";
+
+
+    /* DATE */
+
+    function showDate() {
+
+        const today = new Date();
+
+        const options = {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        };
+
+        document.getElementById(
+            "currentDate"
+        ).textContent =
+            today.toLocaleDateString(
+                "en-IN",
+                options
+            );
+    }
+
+
+    /* SIDEBAR */
+
+    function selectMenu(element) {
+
+        const href =
+            element.getAttribute(
+                "href"
+            );
+
+        const pageName =
+            element.textContent.trim();
+
+
+        if (
+            !href ||
+            href === "#"
+        ) {
+
+            event.preventDefault();
+
+            alert(
+                pageName +
+                " module will be connected next."
+            );
+
+            return;
+
+        }
+
+        // If a real HTML page exists,
+        // browser automatically moves to it.
+
+    }
+
+
+    /* NOTIFICATION */
+
+    function showNotification() {
+
+        alert(
+            "SKILLVEXA: 3 new government insights available."
+        );
+    }
+
+
+    /* VIEW SKILLS */
+
+    function viewAllSkills() {
+
+        alert(
+            "All industry-demanded skills will be displayed here."
+        );
+    }
+
+
+    /* GOVERNMENT RECOMMENDATIONS */
+
+    function openRecommendations() {
+
+        alert(
+            "Government recommendation module will open here."
+        );
+    }
+
+
+    /* START */
+
+    showDate();
+
+</script>
+
+
+</body>
+</html>
